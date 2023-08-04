@@ -1439,6 +1439,10 @@ progress,sub,sup {
     vertical-align: baseline
 }
 
+[type=checkbox],[type=radio],legend {
+    padding: 0
+}
+
 .splide,.splide__container,.splide__slide,sub,sup {
     position: relative
 }
@@ -1536,16 +1540,11 @@ legend {
     color: inherit;
     display: table;
     max-width: 100%;
-    padding: 0;
     white-space: normal
 }
 
 textarea {
     overflow: auto
-}
-
-[type=checkbox],[type=radio] {
-    padding: 0
 }
 
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
@@ -1649,14 +1648,14 @@ summary {
 
 .splide__sr,.visually-hidden {
     width: 1px;
-    height: 1px;
+    margin: -1px;
     overflow: hidden
 }
 
 .splide__sr {
     clip: rect(0 0 0 0);
     border: 0;
-    margin: -1px;
+    height: 1px;
     padding: 0;
     position: absolute
 }
@@ -2076,6 +2075,10 @@ body {
     padding-right: var(--popup-padding)
 }
 
+.decor-accent-text,.hero__decor-text {
+    font-family: Caveat
+}
+
 body._mob-menu-active,body._popup-active {
     overflow: hidden
 }
@@ -2149,7 +2152,7 @@ section {
 
 .visually-hidden {
     position: absolute;
-    margin: -1px;
+    height: 1px;
     padding: 0;
     border: 0;
     white-space: nowrap;
@@ -2158,8 +2161,14 @@ section {
     clip: rect(0 0 0 0)
 }
 
+.popup,.popup-bg {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0
+}
+
 .decor-accent-text {
-    font-family: Caveat;
     font-size: 2rem;
     line-height: 110%;
     color: #23427f
@@ -2289,10 +2298,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .popup {
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -2324,10 +2329,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .popup-bg {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     background: #000;
     opacity: .7
 }
@@ -2424,8 +2425,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .feedback-popup__container {
     overflow-y: auto;
-    max-height: calc(var(--svh) *100 - 30px);
-    padding: 30px 0
+    max-height: calc(var(--vh) *100 - 30px);
+    padding: 0
 }
 
 .feedback-popup__body {
@@ -2794,7 +2795,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     -webkit-user-select: none;
     user-select: none;
     color: #3848d0;
-    font-family: Caveat;
     font-size: 1.625rem;
     font-weight: 400;
     line-height: 90%
