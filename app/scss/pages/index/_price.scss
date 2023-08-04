@@ -1,0 +1,137 @@
+.price {
+
+	padding-top: 80px;
+
+	display: flex;
+	flex-direction: column;
+
+	// .price__title
+
+	&__title {
+	}
+
+	// .price__text
+
+	&__text {
+		
+	}
+
+	// .price__list
+
+	&__list {
+		display: grid;
+		gap: 10px;
+
+		margin-top: 32px;
+
+		@include _550 {
+			gap: 30px;
+		}
+		
+		@include _768 {
+			grid-template-columns: 1fr 1fr;	
+			margin-top: 40px;
+		}
+
+		
+		@include _container {
+			gap: 70px;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		
+	}
+
+	// .price__card
+
+	&__card {
+		padding: 40px 20px;
+		background: var(--primary-color-light);
+		border: 1px solid var(--primary-color-1);
+		border-radius: 30px;
+
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			display: block;
+			text-align: center;
+		}
+
+		h3 {
+			font-weight: 700;
+			font-size: 1.25rem;
+			line-height: 100%;
+			text-transform: uppercase;
+
+			color: var(--title-color);
+
+		}
+
+		strong, b {
+			font-weight: 300;
+			font-size: 2.375rem;
+			line-height: 100%;
+			text-align: center;
+
+			margin-top: 25px;
+
+			color: var(--primary-color-1);
+
+			flex: 1 1 auto;
+
+		}
+
+		a {
+
+			background: var(--primary-color-1);
+			border-radius: 15px;
+
+			transition: background .3s ease;
+			text-transform: uppercase;
+
+			padding: 15px 40px;
+			font-weight: 500;
+			font-size: 1.175rem;
+			@media (min-width: 355px) {
+				font-size: 1.375rem;
+			}
+			line-height: 136.363636%;
+			color: var(--white);
+
+			margin: 25px 0 0 0;
+
+			@include _550 {
+				margin: 25px 13px 0 13px;
+			}
+
+			&:hover {
+				background: var(--primary-color-1-hover);
+			}
+			
+			&:active {
+				background: var(--primary-color-1-active);
+			}
+		}
+	}
+
+	&__decor-text {
+		max-width: 431px;
+		margin-top: 20px;
+		@include _768 {
+			margin-right: 100px;
+			align-self: self-end;
+		}
+			
+		font-family: 'Caveat';
+		font-weight: 400;
+		font-size: 1.6875rem;
+		line-height: 90%;
+		color: var(--title-color);
+
+		padding: 15px 20px;
+
+		background: url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' viewBox='0 0 409 77' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.9' d='M74.623 75.9677C66.8888 67.8368 5.19845 74.4411 0.910023 71.9263C-2.47994 68.6244 7.42953 13.0622 11.3586 4.91878C12.7561 1.99108 14.1389 1.59119 17.2237 3.05756C22.0106 5.79852 86.6815 3.02498 86.6815 3.02498C87.4053 4.81596 90.4025 -0.981229 90.6794 1.17645C91.7974 6.1497 196.505 3.12696 205.417 3.16156C210.806 3.17249 206.324 6.40885 212.748 5.25917C226.472 3.03282 255.747 6.68879 266.197 3.96015C274.583 1.72401 276.347 1.70902 284.073 4.03051C291.974 6.14067 334.94 4.98768 340.086 1.28176C341.37 0.234201 342.264 0.684166 342.155 1.91895C342.132 2.18738 372.178 4.139 372.248 5.10876C372.399 6.34923 373.278 6.96027 374.176 6.17318C375.842 4.91884 408.236 1.38179 408.485 5.04496C409.281 15.4439 401.656 59.1687 397.148 69.7737C392.527 81.0756 372.519 67.5109 355.173 73.7994L276.78 71.6991L259.661 75.4107C258.025 71.6094 249.914 80.7367 245.952 73.9258C244.273 71.1994 230.974 70.3691 227.785 73.0422C225.061 75.1339 157.233 67.2414 149.65 74.4977C137.64 67.8326 86.3759 74.9352 74.5618 76.074L74.623 75.9677Z' fill='%23FEEF38' fill-opacity='0.8'/%3E%3C/svg%3E%0A")
+		0 0 / 100% 100% no-repeat;
+	}
+}

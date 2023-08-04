@@ -1,0 +1,212 @@
+@use 'sass:math';
+
+:root {
+	--title-font: 'e-Ukraine', sans-serif;
+	--main-font: 'e-Ukraine', sans-serif;
+	
+	--primary-color-1: #1F9CB3;
+	--primary-color-1-hover: #27a6bd;
+	--primary-color-1-active: #118aa0;
+	--primary-color-2: #00939D;
+	--primary-color-light: #E9FBFA;
+	--text-color: #224870;
+	--title-color: #07286E;
+	--light: #E8FBF9;
+	--dark: #2F2F2F;
+	--aqua: #69DBC8;
+	--text-color-2: #1C1C1C;
+
+	--accent: #FF822E;
+	--accent-hover: #ff954e;
+	--accent-active: #f06d16;
+
+	--white: #FFF;
+	--black: #000;
+
+	--container-padding: 10px;
+	--negative-container-padding: -10px;
+}
+
+html, body {
+	font-size: 16px;
+	min-height: 100%;
+	min-width: 320px;
+}
+
+body {
+	font-family: var(--main-font);
+	
+	font-weight: 400;
+	line-height: 150%;
+
+	display: flex;
+	flex-direction: column;
+
+	padding-right: var(--popup-padding);
+
+	//padding-right: var(--popup-padding);
+
+	&._mob-menu-active {
+		overflow: hidden;
+	}
+
+	&._popup-active {
+		overflow: hidden;
+	}
+	
+}
+
+::selection {
+	color: var(--white);
+	background: rgba(21, 125, 143, 0.733);
+}
+
+section {
+	position: relative;
+	z-index: 2;
+}
+
+.wrapper {
+	flex: 1 1 auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	overflow: hidden;
+
+	flex: 1 0 auto;
+	position: relative;
+
+	padding-bottom: 65px;
+
+	@include _992 {
+		padding-bottom: 110px;
+	}
+
+	&._none-padding {
+		padding-bottom: 0;
+
+		@include _992 {
+			padding-bottom: 0;
+		}	
+	}
+}
+
+.container {
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+	
+	@media (min-width: #{$container}px) {
+		padding-left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+		padding-right: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+
+		&._alt {
+			padding-left: max(var(--container-padding), calc(50% - #{math.div($container2, 2)}px));
+			padding-right: max(var(--container-padding), calc(50% - #{math.div($container2, 2)}px));
+		}
+	}
+}
+
+/* .section-padding {
+	padding-top: 75px; padding-bottom: 75px;
+
+	@include _768 {
+		padding-top: 100px; padding-bottom: 100px;
+	}
+
+	@include _992 {
+		padding-top: 150px; padding-bottom: 150px;
+	}
+
+} */
+
+.btn {
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	
+	padding: 11px 21px;
+
+	background: var(--accent);
+	color: var(--white);
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 155.555556%;
+	@include _550 {
+		font-size: 1.25rem;
+		line-height: 127%;
+	}
+	
+	@include _768 {
+		padding: 16px 31px;
+	}
+	
+	@include _992 {
+		font-size: 1.375rem;
+	}
+	
+	text-align: center;
+	text-transform: uppercase;
+
+	background: #FF822E;
+	border: 2px solid #FF822E;
+	&._transparent {
+		background: transparent;
+		color: #FF822E;
+	}
+	border-radius: 15px;
+
+	transition: background .3s ease, border-color .3s ease, color .3s ease;
+	&:hover {
+		background: var(--accent-hover);
+		border-color: var(--accent-hover);
+		color: var(--white);
+	}
+	
+	&:active {
+		background: var(--accent-active);
+		border-color: var(--accent-active);
+	}
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px; height: 1px;
+	margin: -1px; padding: 0;
+	border: 0;
+	
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.decor-accent-text {
+	font-family: "Caveat";
+	font-size: 2rem;
+	line-height: 110%;
+	
+	color: #23427F;
+
+	& span {
+		
+		//margin-top: 5px;
+		display: inline-block;
+		padding: 0 15px 5px 15px;
+		&:not(:first-child) {
+			transform: translate(0,-2px) rotate(3deg);
+		}
+		
+		background: url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' viewBox='0 0 229 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.7' d='M38.714 53.5746C34.2309 48.3977 4.46705 55.2148 2.00023 53.6449C0.0377407 51.5467 -0.160796 13.6443 1.99993 8.26716C2.76819 6.33425 3.55209 6.0506 5.32326 6.95639C8.07616 8.66564 44.8893 5.7913 44.8893 5.7913C45.3187 6.94773 46.9709 3.11656 47.1492 4.51956C47.8333 7.74546 107.451 4.04925 112.528 3.92506C115.598 3.84343 113.075 6.02851 116.724 5.17271C124.521 3.49435 141.232 5.39722 147.159 3.44508C151.915 1.84823 152.919 1.80941 157.342 3.1966C161.863 4.44306 186.328 2.98332 189.224 0.481005C189.945 -0.22352 190.459 0.055308 190.408 0.862607C190.398 1.03811 207.532 1.81646 207.581 2.44793C207.679 3.25468 208.185 3.63881 208.69 3.11056C209.626 2.26486 228.046 -0.576025 228.223 1.80956C228.775 8.58022 229.467 36.0075 227 43C224.475 50.4489 208.329 43.152 198.508 47.54L153.832 47.4608L144.115 50.164C143.147 47.7112 138.614 53.7989 136.291 49.4211C135.309 47.6702 127.726 47.3475 125.934 49.1439C124.403 50.5533 85.6893 46.5216 81.4387 51.3801C74.534 47.2299 45.4331 52.6372 38.714 53.5746Z' fill='%23FEEF38'/%3E%3C/svg%3E%0A")
+		0 10% / 100% no-repeat;
+		
+	}
+
+	&._round span {
+		background: url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' viewBox='0 0 190 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.9' d='M35.283 42.1501C30.9832 37.8224 3.25857 44.847 1.22051 43.7438C-0.528865 42.218 1.07531 12.4238 2.53616 7.90869C3.04178 6.28966 3.67969 5.9891 5.19671 6.59457C7.05575 7.49357 32.5541 3.85198 38.0436 3.1723C38.4646 4.06818 39.6388 0.919498 39.8628 2.03983C40.2253 3.33482 52.7605 2.63896 65.711 1.98088C70.4733 1.74274 80.0271 1.06687 94.2091 0.864949C96.7741 0.835736 94.6799 2.56271 97.7049 2.00025C104.155 0.769766 118.025 3.04916 122.934 1.78468C126.874 0.784803 127.708 0.774598 131.361 2.14217C134.5 3.32682 155.266 4.18535 157.777 2.46755C158.382 1.9661 158.787 2.23248 158.739 2.88921C158.739 2.88921 172.847 5.43125 172.866 5.97506C172.922 6.63409 173.302 7.01419 173.756 6.62381C174.535 5.95459 189.834 5.94896 189.876 7.92327C190.017 13.5033 185.534 36.3986 183.285 41.8116C180.919 47.5365 172.201 39.2219 164.027 41.7872C124.233 36.9053 127.809 38.1281 120.281 39.7066C119.512 37.6591 115.877 42.3265 113.965 38.7093C113.193 37.2337 107.048 36.6691 105.614 38.0389C105.006 38.626 96.873 37.7316 88.4672 37.3746C80.0614 37.0175 71.3599 37.2546 69.7153 39.1917C63.3032 35.5324 37.8463 41.6632 35.2425 42.1205L35.283 42.1501Z' fill='%23FEEF38' fill-opacity='0.9'/%3E%3C/svg%3E%0A")
+		0 0 / 100% no-repeat;
+	}
+}

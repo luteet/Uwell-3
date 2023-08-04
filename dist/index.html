@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Uwell</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.wrapper {
+			animation: fadeInAnimation ease 1s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fadeInAnimation {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" id="lazy-styles" media="print">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+		document.addEventListener('DOMContentLoaded', function(event) {
+			const lazyStyles = document.getElementById('lazy-styles');
+			setTimeout(() => {
+				lazyStyles.setAttribute('media', 'all');
+			}, 0)
+		})
+	</script>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__wrapper">
+				<a href="index.html" class="header__logo">
+					<img src="img/logo.svg" alt="Logo" width="102" height="38" loading="lazy" class="header__logo--img">
+				</a>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="/#about-us" class="scroll-link">
+									Про нас
+								</a>
+							</li>
+							<li>
+								<a href="/#how-work" class="scroll-link">
+									Як це працює
+								</a>
+							</li>
+							<li>
+								<a href="/#subscribe" class="scroll-link">
+									Підписка
+								</a>
+							</li>
+							<li>
+								<a href="/#price" class="scroll-link">
+									Ціни
+								</a>
+							</li>
+							<li>
+								<a href="doctors.html">
+									Лікарі
+								</a>
+							</li>
+							<li>
+								<a href="/#our-partners" class="scroll-link">
+									Партнери
+								</a>
+							</li>
+							<li>
+								<a href="/#contacts" class="scroll-link">
+									Контакти
+								</a>
+							</li>
+						</ul>
+						<ul class="header__nav--add">
+							<li>
+								<a href="tel:0800330729" class="header__tel">
+									0 800 33 07 29
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<section class="hero container">
+				<div class="hero__bg" aria-hidden="true">
+					<div class="hero__bg--element">
+						<picture>
+							<source srcset="img/decor-1.avif" type="image/avif">
+							<source srcset="img/decor-1.webp" type="image/webp">
+							<img src="img/decor-1.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<div class="hero__bg--element">
+						<picture>
+							<source srcset="img/decor-2.avif" type="image/avif">
+							<source srcset="img/decor-2.webp" type="image/webp">
+							<img src="img/decor-2.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="hero__content">
+					<h1 class="hero__title main-title">
+						Медицина нового часу від Uwell
+					</h1>
+					<div class="hero__text">
+						<p>
+							Медичний сервіс із супроводом особистого сімейного лікаря 24/7. Зробимо твій шлях до здоров‘я спокійним, легким та зрозумілим.
+						</p>
+					</div>
+					<div class="hero__footer">
+						<div class="hero__footer--item">
+							<a href="doctors.html" class="hero__btn btn">
+								Дізнайся більше
+							</a>
+						</div>
+						<div class="hero__footer--item">
+							<a href="doctors.html" class="hero__btn btn _transparent">
+								Познайомся з лікарем
+							</a>
+							<div class="hero__decor-text">
+								<svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.3089 17.4498C17.8307 19.1206 18.4152 20.7756 19.0914 22.3974C19.7667 24.0226 20.539 25.6059 21.404 27.1387C22.3256 28.7711 23.3649 30.3342 24.5135 31.8157C26.0441 33.8112 27.8431 35.5856 29.8595 37.0886C30.878 37.8421 31.9612 38.5041 33.0964 39.0667C33.6804 39.3624 34.2885 39.6077 34.9142 39.8C35.5808 40.0071 36.2771 40.1027 36.9749 40.0828C37.3585 40.0697 37.738 39.9992 38.1006 39.8735C38.5072 39.7344 38.8749 39.5006 39.1733 39.1913C39.4803 38.867 39.6946 38.4662 39.7937 38.0308C39.8844 37.6289 39.893 37.2129 39.8191 36.8077C39.7527 36.4329 39.6334 36.0694 39.4649 35.7281C39.3061 35.4114 39.1181 35.1103 38.9034 34.8286C38.5108 34.3035 38.0754 33.8118 37.6017 33.3585C36.6661 32.4619 35.6139 31.6954 34.4736 31.0797C33.329 30.4613 32.1011 30.0112 30.8279 29.7435C29.2436 29.4055 27.6068 29.3954 26.0184 29.7138C25.8028 29.7605 25.5903 29.8207 25.3823 29.894C25.1672 29.9697 24.9587 30.063 24.759 30.1732C24.348 30.3897 23.9779 30.6761 23.6651 31.0195C23.3492 31.3696 23.1021 31.7761 22.937 32.2178C22.7804 32.6392 22.6869 33.0815 22.6596 33.5302C22.6182 34.3651 22.716 35.2011 22.9491 36.0038C23.0537 36.3909 23.1785 36.7722 23.3232 37.1462C23.395 37.3318 23.4693 37.5162 23.5493 37.6976C23.6281 37.8803 23.7103 38.0486 23.7908 38.2247C24.4361 39.6188 25.1722 40.9689 25.9943 42.2665C29.3078 47.4503 33.863 51.7248 39.2467 54.7024C39.4461 54.8178 39.6518 54.9224 39.8564 55.0292C40.0617 55.1345 40.2647 55.2447 40.4728 55.3449C40.8898 55.5439 41.304 55.7483 41.7288 55.9286C42.5704 56.3058 43.431 56.631 44.2867 56.9332C44.9703 57.1721 45.6679 57.3686 46.3756 57.5215C46.6632 57.5796 46.9194 57.6271 47.1482 57.6609C47.3784 57.6897 47.5801 57.7087 47.7561 57.7191C48.2685 57.7493 48.2881 57.6489 47.8946 57.4542C47.7961 57.4055 47.6718 57.351 47.5228 57.2911C47.3735 57.2329 47.2008 57.1655 47.0047 57.089C46.8089 57.0132 46.59 56.9324 46.3479 56.8465C46.1077 56.7558 45.8464 56.6558 45.563 56.5536C44.0731 56.0021 42.6145 55.3694 41.1939 54.6583C37.9474 53.0342 34.9768 50.9094 32.3908 48.3619C29.8064 45.834 27.6479 42.9048 25.9987 39.6878C25.8881 39.4659 25.7769 39.2429 25.6653 39.019C25.5604 38.7922 25.4553 38.5647 25.3498 38.3365C25.241 38.1102 25.1489 37.8759 25.048 37.6458C24.9487 37.4141 24.847 37.1836 24.7625 36.96C24.414 36.0971 24.1931 35.188 24.1067 34.2614C24.0545 33.5706 24.155 32.9029 24.458 32.3809C24.6129 32.1195 24.8175 31.8908 25.0601 31.7079C25.187 31.6127 25.3218 31.5284 25.4629 31.456C25.6034 31.3795 25.7508 31.3165 25.9031 31.2677C26.0627 31.2156 26.2255 31.1738 26.3905 31.1425L26.932 31.055C27.1149 31.0351 27.2976 31.0132 27.4808 30.9959C27.665 30.9872 27.8487 30.9714 28.0332 30.9678C28.7741 30.9521 29.5146 31.0132 30.243 31.15C31.7096 31.4284 33.1122 31.9753 34.3802 32.7631C35.0152 33.1579 35.6167 33.6041 36.1787 34.0974C36.7361 34.5819 37.2436 35.1209 37.6936 35.7065L37.8133 35.8699L37.8729 35.9517L37.924 36.0281C37.9913 36.1284 38.0529 36.2324 38.1086 36.3396C38.2161 36.5449 38.2964 36.7634 38.3474 36.9894C38.3942 37.1931 38.4031 37.4037 38.3736 37.6105C38.3607 37.7022 38.336 37.7919 38.3001 37.8773C38.2682 37.9584 38.2246 38.0344 38.1707 38.103C38.1182 38.1737 38.0556 38.2364 37.9851 38.2893C37.9099 38.3479 37.8281 38.3976 37.7414 38.4373C37.5405 38.5257 37.3269 38.582 37.1084 38.6041C36.8627 38.6297 36.6149 38.6301 36.369 38.6053C36.1112 38.5806 35.8554 38.5368 35.604 38.4744C35.0773 38.3384 34.5642 38.1543 34.0712 37.9244C33.817 37.8094 33.5637 37.6856 33.3099 37.5552C33.0587 37.4251 32.81 37.2903 32.5638 37.1507C31.5784 36.5836 30.6381 35.9414 29.7513 35.2298C28.1613 33.9501 26.7249 32.4904 25.4709 30.88C24.2094 29.2594 23.0952 27.5295 22.1415 25.7107C21.6607 24.8007 21.2123 23.8735 20.7962 22.9289C20.5899 22.4565 20.3877 21.9822 20.2011 21.5007L19.9179 20.7796L19.6494 20.0525C19.4663 19.5693 19.3077 19.0764 19.1367 18.5883C18.9801 18.0948 18.813 17.605 18.667 17.1077C18.36 16.1181 18.0875 15.1167 17.8219 14.1132C16.9895 10.9057 16.2695 7.8525 15.4059 5.17398C15.0099 3.94222 14.6709 4.09322 14.8535 5.57763C15.1372 7.67467 15.4926 9.86887 15.9401 12.0423C16.3049 13.8298 16.7987 15.6442 17.3286 17.4267C17.3218 17.4342 17.3155 17.4411 17.3089 17.4498Z" fill="#3848D0" />
+									<path d="M22.1474 13.8545C21.3711 13.0906 20.6551 12.2676 20.006 11.393C19.8399 11.156 19.6707 10.9197 19.5073 10.6791C19.3519 10.4326 19.1996 10.1839 19.0548 9.9318C18.4477 8.82904 17.9212 7.67007 17.4098 6.494L16.6506 4.7195C16.3977 4.12674 16.1494 3.52798 15.8806 2.93952L15.8767 2.93085C15.7842 2.7284 15.6151 2.57097 15.4066 2.49319C15.1981 2.41542 14.9672 2.42367 14.7647 2.51612C14.6373 2.57518 14.5266 2.66495 14.4424 2.77739C14.3583 2.88982 14.3034 3.02139 14.2827 3.16028L14.0239 4.96368C13.7341 6.90603 13.4451 8.85028 13.1682 10.8003C12.8921 12.7504 12.6276 14.7058 12.4138 16.6764C12.3571 17.2736 12.333 17.8735 12.3415 18.4734C12.3404 19.0428 12.4886 19.4241 12.6907 19.6647C12.9872 20.0146 13.3516 19.7067 13.5062 18.9321C13.6043 18.4206 13.6718 17.9037 13.7086 17.3842C13.9194 15.0057 14.283 12.6433 14.7972 10.3116C14.9368 9.66571 15.1064 8.99689 15.1585 8.35522C15.2939 6.69185 15.5967 5.04368 15.8564 3.39156L14.4285 3.58885C14.583 3.9445 14.7428 4.29729 14.9141 4.64462C15.584 6.01751 16.1846 7.43803 16.8981 8.81853C17.5302 10.0638 18.2577 11.2583 19.0743 12.3912C19.9025 13.5163 20.8274 14.567 21.8384 15.5312C22.0395 15.7214 22.2423 15.9042 22.447 16.0771C22.6572 16.2434 22.8697 16.399 23.0846 16.5438C23.4987 16.8264 23.946 17.0571 24.4164 17.2306C24.6266 17.3072 24.7777 17.2784 24.8426 17.1771C24.9054 17.0781 24.8902 16.898 24.7456 16.6976C24.5286 16.4286 24.2927 16.1693 24.0606 15.9046C23.8303 15.6384 23.5912 15.3782 23.3495 15.1233C23.1585 14.9075 22.9529 14.7021 22.7428 14.4993L22.5849 14.3474L22.4333 14.1906C22.3328 14.0854 22.2324 13.9804 22.1322 13.8756L22.1474 13.8545Z" fill="#3848D0" />
+								</svg>
+								<span>
+									Безоплатна
+								</span>
+								<br>
+								<span>
+									консультація
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="symptoms container">
+				<h2 class="visually-hidden">
+					Симптоми
+				</h2>
+				<div class="symptoms__text">
+					<div class="symptoms__text--item">
+						<p>
+							<b>Раптові неприємні відчуття</b>, дискомфорт, біль змінюють вектор руху твого звичного життя. Пройде це зараз чи пізніше?
+						</p>
+						<p>
+							Проблема серйозна чи не критична? <br> Здається, що цього ще недостатньо, щоб бігти в лікарню, але ж воно хвилює! Що робити?
+						</p>
+					</div>
+					<div class="symptoms__text--item">
+						<p>
+							<b>Ситуація починає хвилювати більше.</b> Щось точно не так! Заходимо в Інтернет, читаємо. Від розмаїття думок і порад спокійніше не стає.
+						</p>
+						<p>
+							Ситуація починає порушувати комфорт життя. А поряд нікого немає, хто б допоміг і пояснив план дій.
+						</p>
+					</div>
+				</div>
+				<div class="symptoms__background" aria-hidden="true">
+					<div class="symptoms__decor">
+						<picture>
+							<source srcset="img/min-decor-2.avif" type="image/avif">
+							<source srcset="img/min-decor-2.webp" type="image/webp">
+							<img src="img/min-decor-2.png" alt="" width="0" height="0" loading="lazy" class="symptoms__decor--min">
+						</picture>
+					</div>
+					<div class="symptoms__decor">
+						<picture>
+							<source srcset="img/decor-4.avif" type="image/avif">
+							<source srcset="img/decor-4.webp" type="image/webp">
+							<img src="img/decor-4.png" alt="" width="0" height="0" loading="lazy" class="symptoms__decor--item">
+						</picture>
+						<picture>
+							<source srcset="img/min-decor-1.avif" type="image/avif">
+							<source srcset="img/min-decor-1.webp" type="image/webp">
+							<img src="img/min-decor-1.png" alt="" width="0" height="0" loading="lazy" class="symptoms__decor--min">
+						</picture>
+					</div>
+				</div>
+			</section>
+			<section class="treatment-options container">
+				<h2 class="visually-hidden">
+					Варіанти лікування
+				</h2>
+				<div class="treatment-options__row">
+					<div class="treatment-options__card">
+						<div class="treatment-options__card--header">
+							<picture>
+								<source srcset="img/index/what-we-have/what-we-have-icon-1.avif" type="image/avif">
+								<source srcset="img/index/what-we-have/what-we-have-icon-1.webp" type="image/webp">
+								<img src="img/index/what-we-have/what-we-have-icon-1.png" alt="" width="50" height="50" loading="lazy">
+							</picture>
+							<h3 class="treatment-options__card--title">
+								Є держава і сімейні лікарі
+							</h3>
+						</div>
+						<div class="treatment-options__card--text">
+							<p>
+								Але вони перевантажені. Медичні фахівці знаходяться в центрі системи, тому турботу та комфорт пацієнт не відчуває.
+							</p>
+						</div>
+					</div>
+					<div class="treatment-options__card">
+						<div class="treatment-options__card--header">
+							<picture>
+								<source srcset="img/index/what-we-have/what-we-have-icon-2.avif" type="image/avif">
+								<source srcset="img/index/what-we-have/what-we-have-icon-2.webp" type="image/webp">
+								<img src="img/index/what-we-have/what-we-have-icon-2.png" alt="" width="50" height="50" loading="lazy">
+							</picture>
+							<h3 class="treatment-options__card--title">
+								Є альтернатива - приватна медицина
+							</h3>
+						</div>
+						<div class="treatment-options__card--text">
+							<p>
+								Але там ми починаємо думати: “А чи точно лікар зацікавлений в моєму швидкому одужанні, а не в тому, скільки грошей залишу в клініці, аптеці, лабораторії?”
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="partners container" id="our-partners">
+				<h2 class="partners__title title">
+					Партнери
+				</h2>
+				<div class="partners__slider splide">
+					<div class="partners__slider--track splide__track">
+						<ul class="partners__slider--list splide__list">
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-1.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-1.webp" type="image/webp">
+									<img src="img/index/partners/logo-1.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-2.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-2.webp" type="image/webp">
+									<img src="img/index/partners/logo-2.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-3.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-3.webp" type="image/webp">
+									<img src="img/index/partners/logo-3.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-4.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-4.webp" type="image/webp">
+									<img src="img/index/partners/logo-4.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-5.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-5.webp" type="image/webp">
+									<img src="img/index/partners/logo-5.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-6.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-6.webp" type="image/webp">
+									<img src="img/index/partners/logo-6.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-7.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-7.webp" type="image/webp">
+									<img src="img/index/partners/logo-7.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-8.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-8.webp" type="image/webp">
+									<img src="img/index/partners/logo-8.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-9.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-9.webp" type="image/webp">
+									<img src="img/index/partners/logo-9.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-10.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-10.webp" type="image/webp">
+									<img src="img/index/partners/logo-10.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-11.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-11.webp" type="image/webp">
+									<img src="img/index/partners/logo-11.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-12.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-12.webp" type="image/webp">
+									<img src="img/index/partners/logo-12.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-13.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-13.webp" type="image/webp">
+									<img src="img/index/partners/logo-13.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-14.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-14.webp" type="image/webp">
+									<img src="img/index/partners/logo-14.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+							<li class="partners__slider--item splide__slide">
+								<picture>
+									<source srcset="img/index/partners/logo-15.avif" type="image/avif">
+									<source srcset="img/index/partners/logo-15.webp" type="image/webp">
+									<img src="img/index/partners/logo-15.png" alt="" width="100" height="100" loading="lazy">
+								</picture>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="leave-question container _alt" id="contacts">
+				<div class="leave-question__body">
+					<div class="leave-question__content">
+						<h2 class="leave-question__title title">
+							Залишилися питання?
+						</h2>
+						<div class="leave-question__text large-text">
+							<p>
+								Перейди в месенджер та задай їх медичній команді
+							</p>
+						</div>
+					</div>
+					<div class="leave-question__social">
+						<ul>
+							<li>
+								<a href="https://t.me/Uwell_care_bot" title="Telegram">
+									<img src="img/index/have-questions/have-questions-telegram.svg" width="90" height="90" loading="lazy" alt="">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer container _alt">
+			<div class="footer__decor" aria-hidden="true">
+				<picture>
+					<source srcset="img/decor-2.avif" type="image/avif">
+					<source srcset="img/decor-2.webp" type="image/webp">
+					<img src="img/decor-2.png" alt="" width="0" height="0" loading="lazy">
+				</picture>
+			</div>
+			<a href="index.html" class="footer__logo">
+				<img src="img/logo-light.svg" width="139" height="53" loading="lazy" alt="Logo" class="footer__logo--img">
+				<span class="footer__logo--text">Український медичний сервіс</span>
+			</a>
+			<div class="footer__social">
+				<h3>Підписуйтесь:</h3>
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/uwell.care" title="Facebook">
+							<svg width="21" height="22" viewBox="0 0 21 22">
+								<use xlink:href="img/sprites.svg#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/uwell.care/" title="Instagram">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#instagram"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<nav class="footer__nav">
+				<div class="footer__nav--row">
+					<div class="footer__nav--col">
+						<div class="footer__nav--block">
+							<ul>
+								<li>
+									<a href="/#about-us" class="scroll-link">
+										Про нас
+									</a>
+								</li>
+								<li>
+									<a href="/#how-work" class="scroll-link">
+										Як ми піклуємося
+									</a>
+								</li>
+								<li>
+									<a href="/#subscribe" class="scroll-link">
+										Підписка
+									</a>
+								</li>
+								<li>
+									<a href="/#price" class="scroll-link">
+										Ціни
+									</a>
+								</li>
+								<li>
+									<a href="/#our-partners" class="scroll-link">
+										Партнери
+									</a>
+								</li>
+								<li>
+									<a href="/#contacts" class="scroll-link">
+										Контакти
+									</a>
+								</li>
+							</ul>
+							<br>
+							<ul>
+								<li>
+									<a href="#">
+										Ліцензована угода
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Договір
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__nav--col">
+						<div class="footer__nav--block">
+							<h3>
+								Відділ продажу:
+							</h3>
+							<ul>
+								<li>
+									<a href="tel:0443338671">
+										044 333 86 71
+									</a>
+								</li>
+								<li>
+									<a href="tel:0675004742">
+										067 500 47 42
+									</a>
+								</li>
+								<li>
+									<a href="mailto:Hello@uwell.com.ua">
+										Hello@uwell.com.ua
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__nav--block">
+							<h3>
+								Звʼязок з лікарем:
+							</h3>
+							<ul>
+								<li>
+									<a href="tel:0800330729">
+										0 800 33 07 29
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__nav--block">
+							<h3>
+								Наша адреса:
+							</h3>
+							<ul>
+								<li>
+									<a href="https://goo.gl/maps/K4stWbkkLgpiziGD7">
+										м. Київ, вул. Дніпровська набережна, 18-Б
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="footer__map">
+				<div class="footer__map--body">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.281152316669!2d30.610072676874108!3d50.398597691095574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c59801ddda91%3A0xc11a689953a88927!2z0JTQvdC10L_RgNC-0LLRgdC60LDRjyDQvdCw0LHQtdGA0LXQttC90LDRjywgMTjQkSwg0JrQuNC10LIsIDAyMDk1!5e0!3m2!1sru!2sua!4v1686140233037!5m2!1sru!2sua" width="398" height="241" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="application-popup popup" id="application-popup" data-timer="45">
+		<div class="application-popup__wrapper-popup popup-wrapper">
+			<div class="application-popup__bg-popup popup-bg popup-close"></div>
+			<div class="application-popup__body-popup popup-body">
+				<button type="button" class="application-popup__close-popup-btn popup-close-btn popup-close" title="Закрыть">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971">
+						<path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"></path>
+					</svg>
+				</button>
+				<h2 class="application-popup__title">
+					Якщо у вас залишились запитання, поспілкуйтесь з менеджером
+				</h2>
+				<div class="application-popup__social">
+					<ul>
+						<li>
+							<a href="https://t.me/Uwell_care_bot" title="Telegram">
+								<svg width="24" height="24" viewBox="0 0 700 600">
+									<use xlink:href="img/sprites.svg#telegram"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
+
+</body>
+
+</html>
