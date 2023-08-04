@@ -57,9 +57,9 @@
 	}
 
 	&__nav {
-		position: absolute;
-		left: 0; top: 0;
-		width: 100%; height: calc(var(--svh) * 100);
+		position: fixed;
+		left: -10px; top: 0;
+		width: 100vw; height: calc(var(--vh) * 100);
 
 		background: var(--white);
 

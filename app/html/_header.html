@@ -4,39 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Uwell</title>
-	<style>
-		
-		.image-body {
-			width: 100%; position: relative;
-		}
-
-		.image-body img {
-			position: absolute;
-			left: 0; top: 0;
-			width: 100%; height: 100%;
-			object-fit: cover;
-		}
-
-		.wrapper {
-			animation: fadeInAnimation ease 1s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-		
-		@keyframes fadeInAnimation {
-			0% {
-				opacity: 0;
-			}
-			100% {
-				opacity: 1;
-			}
-		}
-
-	</style>
 	<link rel="stylesheet" href="css/style-critical.min.css">
 	<link rel="stylesheet" href="css/style.min.css" id="lazy-styles" media="print">
 	<script>
 		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+		document.querySelector('html').style.setProperty("--svh", window.innerHeight * 0.01 + "px");
 		document.addEventListener('DOMContentLoaded', function (event) {
 			const lazyStyles = document.getElementById('lazy-styles');
 			setTimeout(() => {
@@ -57,23 +29,8 @@
 					<div class="header__nav--body">
 						<ul class="header__nav--list">
 							<li>
-								<a href="/#about-us" class="scroll-link">
-									Про нас
-								</a>
-							</li>
-							<li>
-								<a href="/#how-work" class="scroll-link">
-									Як це працює
-								</a>
-							</li>
-							<li>
-								<a href="/#subscribe" class="scroll-link">
-									Підписка
-								</a>
-							</li>
-							<li>
-								<a href="/#price" class="scroll-link">
-									Ціни
+								<a href="/#approach" class="scroll-link">
+									Підхід
 								</a>
 							</li>
 							<li>
@@ -82,8 +39,28 @@
 								</a>
 							</li>
 							<li>
+								<a href="/#how-it-work" class="scroll-link">
+									Як це працює
+								</a>
+							</li>
+							<li>
+								<a href="/#tariffs" class="scroll-link">
+									Тарифи
+								</a>
+							</li>
+							<li>
 								<a href="/#our-partners" class="scroll-link">
 									Партнери
+								</a>
+							</li>
+							<li>
+								<a href="/#fund" class="scroll-link">
+									Фонд
+								</a>
+							</li>
+							<li>
+								<a href="/#faq" class="scroll-link">
+									F.A.Q
 								</a>
 							</li>
 							<li>

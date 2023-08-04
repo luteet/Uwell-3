@@ -67,7 +67,28 @@ body.addEventListener('click', function (event) {
 	// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
 
 	
+	// =-=-=-=-=-=-=-=-=-=-=-=- <FAQ> -=-=-=-=-=-=-=-=-=-=-=-=
 	
+	const faqQuestion = $(".faq__question")
+	if(faqQuestion) {
+	
+		const faqItem = faqQuestion.parentElement,
+		activeFaqItem = document.querySelector('.faq__item._active');
+
+		if(activeFaqItem) {
+			if(activeFaqItem == faqItem) {
+				activeFaqItem.classList.remove('_active')
+			} else {
+				activeFaqItem.classList.remove('_active')
+				faqItem.classList.add('_active')
+			}
+		} else {
+			faqItem.classList.add('_active')
+		}
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </FAQ> -=-=-=-=-=-=-=-=-=-=-=-=	
 
 })
 

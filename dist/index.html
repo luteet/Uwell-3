@@ -5,41 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Uwell</title>
-	<style>
-		.image-body {
-			width: 100%;
-			position: relative;
-		}
-
-		.image-body img {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
-		.wrapper {
-			animation: fadeInAnimation ease 1s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-
-		@keyframes fadeInAnimation {
-			0% {
-				opacity: 0;
-			}
-
-			100% {
-				opacity: 1;
-			}
-		}
-	</style>
 	<link rel="stylesheet" href="css/style-critical.min.css">
 	<link rel="stylesheet" href="css/style.min.css" id="lazy-styles" media="print">
 	<script>
 		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+		document.querySelector('html').style.setProperty("--svh", window.innerHeight * 0.01 + "px");
 		document.addEventListener('DOMContentLoaded', function(event) {
 			const lazyStyles = document.getElementById('lazy-styles');
 			setTimeout(() => {
@@ -61,23 +31,8 @@
 					<div class="header__nav--body">
 						<ul class="header__nav--list">
 							<li>
-								<a href="/#about-us" class="scroll-link">
-									Про нас
-								</a>
-							</li>
-							<li>
-								<a href="/#how-work" class="scroll-link">
-									Як це працює
-								</a>
-							</li>
-							<li>
-								<a href="/#subscribe" class="scroll-link">
-									Підписка
-								</a>
-							</li>
-							<li>
-								<a href="/#price" class="scroll-link">
-									Ціни
+								<a href="/#approach" class="scroll-link">
+									Підхід
 								</a>
 							</li>
 							<li>
@@ -86,8 +41,28 @@
 								</a>
 							</li>
 							<li>
+								<a href="/#how-it-work" class="scroll-link">
+									Як це працює
+								</a>
+							</li>
+							<li>
+								<a href="/#tariffs" class="scroll-link">
+									Тарифи
+								</a>
+							</li>
+							<li>
 								<a href="/#our-partners" class="scroll-link">
 									Партнери
+								</a>
+							</li>
+							<li>
+								<a href="/#fund" class="scroll-link">
+									Фонд
+								</a>
+							</li>
+							<li>
+								<a href="/#faq" class="scroll-link">
+									F.A.Q
 								</a>
 							</li>
 							<li>
@@ -142,7 +117,7 @@
 					</div>
 					<div class="hero__footer">
 						<div class="hero__footer--item">
-							<a href="doctors.html" class="hero__btn btn">
+							<a href="/#symptoms" class="hero__btn btn scroll-link">
 								Дізнайся більше
 							</a>
 						</div>
@@ -167,7 +142,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="symptoms container">
+			<section class="symptoms container" id="symptoms">
 				<h2 class="visually-hidden">
 					Симптоми
 				</h2>
@@ -211,7 +186,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="treatment-options container">
+			<section class="treatment-options container _alt">
 				<h2 class="visually-hidden">
 					Варіанти лікування
 				</h2>
@@ -223,7 +198,7 @@
 								<source srcset="img/index/what-we-have/what-we-have-icon-1.webp" type="image/webp">
 								<img src="img/index/what-we-have/what-we-have-icon-1.png" alt="" width="50" height="50" loading="lazy">
 							</picture>
-							<h3 class="treatment-options__card--title">
+							<h3 class="treatment-options__card--title min-title-2">
 								Є держава і сімейні лікарі
 							</h3>
 						</div>
@@ -240,7 +215,7 @@
 								<source srcset="img/index/what-we-have/what-we-have-icon-2.webp" type="image/webp">
 								<img src="img/index/what-we-have/what-we-have-icon-2.png" alt="" width="50" height="50" loading="lazy">
 							</picture>
-							<h3 class="treatment-options__card--title">
+							<h3 class="treatment-options__card--title min-title-2">
 								Є альтернатива - приватна медицина
 							</h3>
 						</div>
@@ -252,10 +227,414 @@
 					</div>
 				</div>
 			</section>
+			<section class="what-to-do container _alt">
+				<div class="what-to-do__body">
+					<div class="what-to-do__image">
+						<div class="what-to-do__image--wrapper">
+							<picture>
+								<source srcset="img/index/after-hospital/after-hospital-image.avif" type="image/avif">
+								<source srcset="img/index/after-hospital/after-hospital-image.webp" type="image/webp">
+								<img src="img/index/after-hospital/after-hospital-image.png" alt="" width="414" height="487" loading="lazy">
+							</picture>
+						</div>
+					</div>
+					<div class="what-to-do__content">
+						<h2 class="what-to-do__title min-title-2">
+							Після візиту в лікарню маємо на руках купу направлень, аналізів, чеків і відкритих питань.
+						</h2>
+						<div class="what-to-do__text">
+							<p>Що робити - точно не зрозуміло, нормальною мовою не пояснили. Чи йти далі цим шляхом? <br> Більшість із нас починають сумніватись і відкладати.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="new-approach container _alt" id="approach">
+				<div class="new-approach__decor" aria-hidden="true">
+					<picture>
+						<source srcset="img/decor-3.avif" type="image/avif">
+						<source srcset="img/decor-3.webp" type="image/webp">
+						<img src="img/decor-3.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<div class="new-approach__title title">
+					Новий підхід до медицини
+				</div>
+				<div class="new-approach__text">
+					<p>
+						Uwell – платформа особистих лікарів, які завжди поруч. <br> Додаток Uwell – твоя цифрова медична карта, та зв'язок із лікарем 24/7
+					</p>
+					<p>
+						<b>
+							Поєднали: сімейну медицину, медичний консьєрж, страхування та систему лояльності.
+						</b>
+					</p>
+					<p>
+						Прибрали зацікавленість у тому, скільки грошей залишиш у клініці. Створили програму лояльності страхування, як розумного методу використання коштів.
+					</p>
+				</div>
+				<div class="new-approach__services-row">
+					<div class="new-approach__service">
+						<div class="new-approach__service--image">
+							<div class="new-approach__service--image-body image-body">
+								<picture>
+									<source srcset="img/index/new-approach/new-approach-image-1.avif" type="image/avif">
+									<source srcset="img/index/new-approach/new-approach-image-1.webp" type="image/webp">
+									<img src="img/index/new-approach/new-approach-image-1.png" alt="" width="288" height="346" loading="lazy">
+								</picture>
+							</div>
+						</div>
+						<div class="new-approach__service--body">
+							<h3 class="new-approach__service--title min-title-2">
+								Сімейний лікар Uwell підійде до твого здоров‘я індивідуально
+							</h3>
+							<ul class="new-approach__service--list">
+								<li>
+									зрозуміє що болить та “людською мовою” пояснить, що відбувається
+								</li>
+								<li>
+									розробить покроковий маршрут до одужання з урахуванням твоєї історії звернень, часу, комфорту та життєвої ситуації
+								</li>
+								<li>
+									пояснить призначення та результати аналізів
+								</li>
+								<li>
+									перевірить всі призначення інших лікарів, прибере зайве та непотрібне тобі
+								</li>
+								<li>
+									оцінить поточне лікування та супроводить до одужання
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="new-approach__service">
+						<div class="new-approach__service--image">
+							<div class="new-approach__service--image-body image-body">
+								<picture>
+									<source srcset="img/index/new-approach/new-approach-image-2.avif" type="image/avif">
+									<source srcset="img/index/new-approach/new-approach-image-2.webp" type="image/webp">
+									<img src="img/index/new-approach/new-approach-image-2.png" alt="" width="288" height="346" loading="lazy">
+								</picture>
+							</div>
+						</div>
+						<div class="new-approach__service--body">
+							<h3 class="new-approach__service--title min-title-2">
+								Медичний асистент Uwell піклуватиметься про тебе 24/7
+							</h3>
+							<ul class="new-approach__service--list">
+								<li>
+									швидко підбере клініку та направить до перевірених спеціалістів
+								</li>
+								<li>
+									організує запис на прийом або аналізи, коли і де тобі зручно
+								</li>
+								<li>
+									подбає про термінову допомогу
+								</li>
+								<li>
+									знайде потрібні ліки та замовить доставку
+								</li>
+								<li>
+									візьме всі комунікації з медичними закладами та страховою на себе
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="app-for-you container _alt">
+				<div class="app-for-you__body">
+					<div class="app-for-you__decor" aria-hidden="true">
+						<picture>
+							<source srcset="img/decor-2.avif" type="image/avif">
+							<source srcset="img/decor-2.webp" type="image/webp">
+							<img src="img/decor-2.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<div class="app-for-you__content">
+						<h2 class="app-for-you__title min-title-2">
+							Для тебе Uwell: твій спокій і підтримка.
+						</h2>
+						<div class="app-for-you__text">
+							<p>
+								Живи, подорожуй, займайся спортом, активностями, розважайся з дітьми, виходь за рамки комфорту – ми завжди поруч по всій території України, якщо не фізично, то онлайн у додатку твого смартфона.
+							</p>
+						</div>
+					</div>
+					<div class="app-for-you__image">
+						<div class="app-for-you__image--wrapper">
+							<picture>
+								<source srcset="img/app/image.avif" type="image/avif">
+								<source srcset="img/app/image.webp" type="image/webp">
+								<img src="img/app/image.png" alt="" width="472" height="377" loading="lazy">
+							</picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="how-it-work container" id="how-it-work">
+				<div class="how-it-work__decor" aria-hidden="true">
+					<picture>
+						<source srcset="img/decor-1.avif" type="image/avif">
+						<source srcset="img/decor-1.webp" type="image/webp">
+						<img src="img/decor-1.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<div class="how-it-work__content">
+					<h2 class="how-it-work__title title">
+						Як це працює?
+					</h2>
+					<div class="how-it-work__text">
+						<p>
+							Обирай зручний канал для комунікації і спілкуйся з лікарем як зі своїм другом. Ти завжди можеш розповісти про самопочуття, поділитись тим що турбує, поставити питання щодо покращення здоров’я та отримати професійну консультацію лікаря. З персональним лікарем ти ніколи не залишишся один на один з проблемою.
+						</p>
+						<p>
+							<b>Персоналізована медицина (індивідуальний супровід)</b><br> Лікар Uwell знатиме все про твоє здоров’я. Медичні дані про історії хвороб та методи лікувань будуть зберігатися в єдиній електронній карті, щоб ти не витрачав дорогоцінний час на одні й ті ж питання.
+						</p>
+					</div>
+				</div>
+				<ul class="how-it-work__chat">
+					<li class="how-it-work__chat-item _author">
+						<span class="how-it-work__chat-item--name">Наталія</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Привіт, Володимире! <br> Відчуваю слабкість, швидко втомлююсь, ближче до вечора я ніби “ватна”. Що це може бути?
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">22:45</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li class="how-it-work__chat-item">
+						<span class="how-it-work__chat-item--name">Лікар Uwell - Володимир</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Доброї ночі, Наталіє! Зважаючи на Вашу історію хвороб і спадковість, це може бути щитовидна залоза. Рекомендую здати пакет аналізів. Ксенія — ваш медичний асистент — все організує.
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">22:46</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li class="how-it-work__chat-item _author">
+						<span class="how-it-work__chat-item--name">Наталія</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Це щось серйозне?
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">22:46</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li class="how-it-work__chat-item">
+						<span class="how-it-work__chat-item--name">Лікар Uwell - Володимир</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Не переймайтеся раніше часу. Почекаємо аналізи. Якщо буде необхідно лікування, то воно допоможе за 5-10 днів. Я зателефоную пізніше, щоб дізнатись, як Ви. Згодні?
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">22:47</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li class="how-it-work__chat-item _author">
+						<span class="how-it-work__chat-item--name">Наталія</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Звичайно
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">22:48</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li class="how-it-work__chat-item">
+						<span class="how-it-work__chat-item--name">Лікар Uwell - Володимир</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Наталіє, підібрала лабораторію на Вашій вулиці та забронювала аналізи. Додатково записала на консультацію до ендокринолога неподалік. <br> Усі деталі — в повідомленні. Після консультації зателефоную. Бережіть себе.
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">07:22</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li class="how-it-work__chat-item _author">
+						<span class="how-it-work__chat-item--name">Наталія</span>
+						<div class="how-it-work__chat-item--text">
+							<p>
+								Дякую!
+							</p>
+						</div>
+						<div class="how-it-work__chat-item--footer">
+							<span class="how-it-work__chat-item--time">07:31</span>
+							<span class="how-it-work__chat-item--check">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tariffs container _alt">
+				<h2 class="tariffs__title title">
+					Рівні турботи Uwell
+				</h2>
+				<div class="tariffs__text text">
+					<p>
+						Обирай формат супроводу, бронюй за собою лікаря і користуйся всіма перевагами сервісу.
+					</p>
+				</div>
+				<ul class="tariffs__list">
+					<li class="tariffs__card">
+						<div class="tariffs__card--header">
+							<h3 class="tariffs__card--name">
+								Дружній
+							</h3>
+							<div class="tariffs__card--min-desrc">
+								Cупровід для однієї особи
+							</div>
+						</div>
+						<ul class="tariffs__card--params">
+							<li>
+								сімейний лікар
+							</li>
+							<li>
+								медичний асистент
+							</li>
+							<li>
+								знижки від партнерів Uwell
+							</li>
+						</ul>
+						<div class="tariffs__card--footer">
+							<span class="tariffs__card--price">
+								<strong>$30</strong>/квартал
+							</span>
+							<a href="#" class="tariffs__card--btn btn">
+								ПІДПИСАТИСЯ
+							</a>
+							<a href="#" class="tariffs__card--link">
+								Оплатити криптовалютою
+							</a>
+						</div>
+					</li>
+					<li class="tariffs__card">
+						<div class="tariffs__card--header">
+							<h3 class="tariffs__card--name">
+								Родинний
+							</h3>
+							<div class="tariffs__card--min-desrc">
+								Cупровід для родини
+							</div>
+						</div>
+						<ul class="tariffs__card--params">
+							<li>
+								сімейний лікар
+							</li>
+							<li>
+								медичний асистент
+							</li>
+							<li>
+								знижки від партнерів Uwell
+							</li>
+							<li>
+								супровід двох дорослих і двох дітей
+							</li>
+						</ul>
+						<div class="tariffs__card--footer">
+							<span class="tariffs__card--price">
+								<strong>$60</strong>/квартал
+							</span>
+							<a href="#" class="tariffs__card--btn btn">
+								ПІДПИСАТИСЯ
+							</a>
+							<a href="#" class="tariffs__card--link">
+								Оплатити криптовалютою
+							</a>
+						</div>
+					</li>
+					<li class="tariffs__card">
+						<div class="tariffs__card--header">
+							<div class="tariffs__card--logo">
+								<picture>
+									<source srcset="img/index/tariffs/tariffs-logo.avif" type="image/avif">
+									<source srcset="img/index/tariffs/tariffs-logo.webp" type="image/webp">
+									<img src="img/index/tariffs/tariffs-logo.png" alt="" width="57" height="14" loading="lazy">
+								</picture>
+							</div>
+							<h3 class="tariffs__card--name">
+								Страховий
+							</h3>
+							<div class="tariffs__card--min-desrc">
+								Cупровід для однієї особи
+							</div>
+						</div>
+						<ul class="tariffs__card--params">
+							<li>
+								сімейний лікар
+							</li>
+							<li>
+								медичний асистент
+							</li>
+							<li>
+								індивідуальний супровід
+							</li>
+							<li>
+								медичне страхування від СК VUSO
+							</li>
+						</ul>
+						<div class="tariffs__card--footer">
+							<span class="tariffs__card--price">
+								<strong>$150</strong>/квартал
+							</span>
+							<a href="#" class="tariffs__card--btn btn">
+								ПІДПИСАТИСЯ
+							</a>
+							<a href="#" class="tariffs__card--link">
+								Оплатити криптовалютою
+							</a>
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="partners container" id="our-partners">
 				<h2 class="partners__title title">
 					Партнери
 				</h2>
+				<div class="partners__text text">
+					Ми маємо надійних партнерів - перевірені клініки та лабораторії. Клієнти Uwell для них - важливі та завжди користуються знижками й особливими умовами на рекомендовані послуги.
+				</div>
 				<div class="partners__slider splide">
 					<div class="partners__slider--track splide__track">
 						<ul class="partners__slider--list splide__list">
@@ -368,6 +747,144 @@
 					</div>
 				</div>
 			</section>
+			<section class="fund container" id="fund">
+				<div class="fund__decor" aria-hidden="true">
+					<picture>
+						<source srcset="img/decor-2.avif" type="image/avif">
+						<source srcset="img/decor-2.webp" type="image/webp">
+						<img src="img/decor-2.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<h2 class="fund__title title">
+					Будуємо здорову Україну з Фондом Uwell Care Foundation
+				</h2>
+				<div class="fund__text text">
+					<p>Багато військових отримали поранення, захищаючи нашу країну від окупантів. На знак подяки ми створили благодійний фонд, що допомагає нашим воїнам лікуватися та проходити реабілітацію в приватних клініках. Uwell організовує лікування в медзакладах та разом з Фондом покриває фінансові зобов‘язання перед клініками. Приєднуйся та у такий спосіб скажи своє “Дякую” за нашу незалежну та здорову країну.</p>
+				</div>
+				<div class="fund__footer">
+					<a href="#" class="fund__btn btn">
+						Задонатити
+					</a>
+					<br>
+					<a href="#" class="fund__link">
+						Задонат криптовалютою
+					</a>
+				</div>
+			</section>
+			<section class="faq container" id="faq">
+				<div class="faq__decor" aria-hidden="true">
+					<picture>
+						<source srcset="img/decor-4.avif" type="image/avif">
+						<source srcset="img/decor-4.webp" type="image/webp">
+						<img src="img/decor-4.png" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<h2 class="faq__title title">
+					F.A.Q
+				</h2>
+				<ul class="faq__list">
+					<li class="faq__item">
+						<div class="faq__question text">
+							Який графік роботи вашого сервісу?
+							<div class="faq__question--icon">
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="faq__answear text">
+							<div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati mollitia amet odio optio. Velit non necessitatibus ab eaque architecto incidunt deleniti, ratione consectetur, obcaecati fugiat laudantium maxime magnam cumque esse.
+								</p>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias placeat aliquid veniam iste suscipit incidunt eligendi recusandae molestiae officiis. Laboriosam accusantium ad eius odio atque doloribus quisquam impedit corporis voluptatem!
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="faq__item">
+						<div class="faq__question text">
+							Які послуги включає сервіс Uwell?
+							<div class="faq__question--icon">
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="faq__answear text">
+							<div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati mollitia amet odio optio. Velit non necessitatibus ab eaque architecto incidunt deleniti, ratione consectetur, obcaecati fugiat laudantium maxime magnam cumque esse.
+								</p>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias placeat aliquid veniam iste suscipit incidunt eligendi recusandae molestiae officiis. Laboriosam accusantium ad eius odio atque doloribus quisquam impedit corporis voluptatem!
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="faq__item">
+						<div class="faq__question text">
+							Як почати користуватися послугами Uwell?
+							<div class="faq__question--icon">
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="faq__answear text">
+							<div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati mollitia amet odio optio. Velit non necessitatibus ab eaque architecto incidunt deleniti, ratione consectetur, obcaecati fugiat laudantium maxime magnam cumque esse.
+								</p>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias placeat aliquid veniam iste suscipit incidunt eligendi recusandae molestiae officiis. Laboriosam accusantium ad eius odio atque doloribus quisquam impedit corporis voluptatem!
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="faq__item">
+						<div class="faq__question text">
+							Чи може людина, яка перебуває за кордоном, скористатися послугами Uwell?
+							<div class="faq__question--icon">
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="faq__answear text">
+							<div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati mollitia amet odio optio. Velit non necessitatibus ab eaque architecto incidunt deleniti, ratione consectetur, obcaecati fugiat laudantium maxime magnam cumque esse.
+								</p>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias placeat aliquid veniam iste suscipit incidunt eligendi recusandae molestiae officiis. Laboriosam accusantium ad eius odio atque doloribus quisquam impedit corporis voluptatem!
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="faq__item">
+						<div class="faq__question text">
+							Як ви обираєте команду лікарів?
+							<div class="faq__question--icon">
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="faq__answear text">
+							<div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati mollitia amet odio optio. Velit non necessitatibus ab eaque architecto incidunt deleniti, ratione consectetur, obcaecati fugiat laudantium maxime magnam cumque esse.
+								</p>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias placeat aliquid veniam iste suscipit incidunt eligendi recusandae molestiae officiis. Laboriosam accusantium ad eius odio atque doloribus quisquam impedit corporis voluptatem!
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="leave-question container _alt" id="contacts">
 				<div class="leave-question__body">
 					<div class="leave-question__content">
@@ -376,7 +893,7 @@
 						</h2>
 						<div class="leave-question__text large-text">
 							<p>
-								Перейди в месенджер та задай їх медичній команді
+								Задай їх в месенджері або залиш заявку і тобі зателефонує медичний асистент 
 							</p>
 						</div>
 					</div>
@@ -385,6 +902,11 @@
 							<li>
 								<a href="https://t.me/Uwell_care_bot" title="Telegram">
 									<img src="img/index/have-questions/have-questions-telegram.svg" width="90" height="90" loading="lazy" alt="">
+								</a>
+							</li>
+							<li>
+								<a href="tel:0800330729" title="0 800 33 07 29">
+									<img src="img/index/have-questions/have-questions-tel.svg" width="90" height="90" loading="lazy" alt="">
 								</a>
 							</li>
 						</ul>
@@ -409,16 +931,23 @@
 				<h3>Підписуйтесь:</h3>
 				<ul>
 					<li>
-						<a href="https://www.facebook.com/uwell.care" title="Facebook">
+						<a href="https://www.facebook.com/uwell.care" target="_blank" title="Facebook">
 							<svg width="21" height="22" viewBox="0 0 21 22">
 								<use xlink:href="img/sprites.svg#facebook"></use>
 							</svg>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.instagram.com/uwell.care/" title="Instagram">
+						<a href="https://www.instagram.com/uwell.care/" target="_blank" title="Instagram">
 							<svg width="19" height="19" viewBox="0 0 19 19">
 								<use xlink:href="img/sprites.svg#instagram"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" target="_blank" title="Instagram">
+							<svg width="21" height="22" viewBox="0 0 21 22">
+								<use xlink:href="img/sprites.svg#linkedIn"></use>
 							</svg>
 						</a>
 					</li>
@@ -556,6 +1085,49 @@
 						</li>
 					</ul>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__container">
+				<form method="post" class="feedback-popup__body popup-body">
+					<div class="feedback-popup__body--wrapper">
+						<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+							<svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="28.9708" y1="2.06066" x2="1.06388" y2="29.9676" stroke="white" stroke-width="3" />
+								<line x1="1.06066" y1="1.84632" x2="28.9676" y2="29.7533" stroke="white" stroke-width="3" />
+							</svg>
+						</button>
+						<h2 class="feedback-popup__title">
+							Форма зворотнього звʼязку
+						</h2>
+						<label class="feedback-popup__label">
+							<input type="text" name="name" placeholder="Ваше ім'я" required class="feedback-popup__input">
+						</label>
+						<label class="feedback-popup__label">
+							<input type="tel" name="tel" placeholder="Номер телефону" required class="feedback-popup__input">
+						</label>
+						<label class="feedback-popup__label">
+							<input type="email" name="email" placeholder="Email" required class="feedback-popup__input">
+						</label>
+						<label class="feedback-popup__label">
+							<input type="text" name="message" placeholder="Коментар/питання/зручний час для дзвінку" required class="feedback-popup__input">
+						</label>
+						<button class="feedback-popup__btn btn" type="submit">
+							Відправити
+						</button>
+					</div>
+					<div class="feedback-popup__image image-body">
+						<picture>
+							<source srcset="img/popup-image.avif" type="image/avif">
+							<source srcset="img/popup-image.webp" type="image/webp">
+							<img src="img/popup-image.png" alt="" width="641" height="277" loading="lazy">
+						</picture>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

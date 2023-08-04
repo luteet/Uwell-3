@@ -1,97 +1,97 @@
 
 .popup {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%; height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%; height: 100%;
 	display: flex;
-    align-items: center;
-    padding: 10px;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .4s ease,visibility .4s ease;
-    -webkit-perspective: 400px;
-    perspective: 400px;
-    will-change: opacity
+	align-items: center;
+	padding: 10px;
+	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .4s ease,visibility .4s ease;
+	-webkit-perspective: 400px;
+	perspective: 400px;
+	will-change: opacity
 }
 
 .popup._active._transition-none .popup-body,.popup._transition-none,.popup._transition-none .popup-body {
-    transition: none
+	transition: none
 }
 
 .popup._active {
-    opacity: 1;
-    visibility: visible
+	opacity: 1;
+	visibility: visible
 }
 
 .popup-wrapper {
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
-    width: 100%;
-    z-index: 2;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100%;
+	width: 100%;
+	z-index: 2;
 
 	display: flex;
 }
 
 .popup-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%; height: 100%;
-    background: #000;
-    opacity: .7
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%; height: 100%;
+	background: #000;
+	opacity: .7
 }
 
 .popup-body {
-    margin: auto;
-    position: relative;
-    background: #fff;
-    overflow-y: auto;
-    max-height: calc((var(--svh) * 100) - 30px);
-    max-width: 650px;
-    width: 100%;
-    border-radius: 14px;
-    z-index: 2;
+	margin: auto;
+	position: relative;
+	background: #fff;
+	overflow-y: auto;
+	max-height: calc((var(--svh) * 100) - 30px);
+	max-width: 650px;
+	width: 100%;
+	border-radius: 14px;
+	z-index: 2;
 }
 
 .application-popup__title span:not(:first-child),.hero__list li {
-    margin-top: 10px
+	margin-top: 10px
 }
 
 .popup-close-btn {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    line-height: 100%;
-    width: 40px;
-    height: 40px;
-    background: #fff
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	line-height: 100%;
+	width: 40px;
+	height: 40px;
+	background: #fff
 }
 
 .application-popup__social ul a,.book-doctor__social ul a {
-    height: 55px;
-    transition: background .3s ease;
-    fill: var(--white)
+	height: 55px;
+	transition: background .3s ease;
+	fill: var(--white)
 }
 
 .popup-close-btn svg {
-    width: 50%
+	width: 50%
 }
 
 .application-popup__body-popup {
-    background: var(--primary-color-1);
-    padding: 60px var(--container-padding) 30px;
+	background: var(--primary-color-1);
+	padding: 60px var(--container-padding) 30px;
 }
 
 .application-popup__close-popup-btn {
-    background: rgba(0,0,0,0);
-    fill: var(--white)
+	background: rgba(0,0,0,0);
+	fill: var(--white)
 }
 
 .application-popup__title {
-    color: var(--white);
+	color: var(--white);
 	font-family: var(--title-font);
 	font-weight: 400;
 	line-height: 120%;
@@ -114,36 +114,162 @@
 }
 
 .application-popup__social ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: -5px;
-    padding-top: 25px
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: -5px;
+	padding-top: 25px
 }
 
 .application-popup__social ul li {
-    padding: 5px
+	padding: 5px
 }
 
 .application-popup__social ul a {
-    width: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent)
+	width: 55px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--accent)
 }
 
 .application-popup__social ul a:hover {
-    background: var(--accent-hover)
+	background: var(--accent-hover)
 }
 
 .application-popup__social ul a:active {
-    background: var(--accent-active)
+	background: var(--accent-active)
 }
 
 .application-popup__social ul a svg {
-    width: 65%;
-    height: 65%
+	width: 65%;
+	height: 65%
+}
+
+.feedback-popup {
+
+	// .feedback-popup__wrapper
+
+	&__wrapper {
+	}
+
+	// .feedback-popup__bg
+
+	&__bg {
+	}
+
+	// .feedback-popup__container
+
+	&__container {
+		overflow-y: auto;
+		max-height: calc((var(--svh) * 100) - 30px);
+		padding: 30px 0;
+	}
+
+	// .feedback-popup__body
+
+	&__body {
+		
+		border-radius: 30px 30px 0 0;
+		@include _992 {
+			border-radius: 30px;
+		}
+		background: var(--primary-color-1);
+		overflow-y: visible;
+		max-height: none;
+
+		&--wrapper {
+			padding: 60px 20px;
+			@include _768 {
+				padding: 60px 70px;
+			}
+			
+		}
+	}
+
+	// .feedback-popup__close-btn
+
+	&__close-btn {
+		background: transparent;
+
+		width: 50px; height: 50px;
+	}
+
+	// .feedback-popup__title
+
+	&__title {
+		color: #FFF;
+		font-size: 1.125rem;
+		@include _550 {
+			font-size: 1.25rem;
+		}
+		
+		@include _768 {
+			font-size: 1.5rem;
+		}
+		
+		@include _992 {
+			font-size: 1.625rem;
+		}
+		font-weight: 700;
+		line-height: 130%;
+		letter-spacing: 0.0325rem;
+	}
+
+	// .feedback-popup__label
+
+	&__label {
+		display: flex;
+
+		margin-top: 25px;
+		@include _768 {
+			margin-top: 43px;
+		}
+	}
+
+	// .feedback-popup__input
+
+	&__input {
+		color: #FFF;
+		font-feature-settings: 'clig' off, 'liga' off;
+		font-size: 1rem;
+		@include _768 {
+			font-size: 1.125rem;
+		}
+		font-weight: 300;
+		line-height: 200%;
+		border-bottom: 1px solid var(--white);
+
+		width: 100%;
+		background: transparent;
+
+		&::placeholder {
+			color: #FFF;
+		}
+	}
+
+	// .feedback-popup__btn
+
+	&__btn {
+		margin-top: 52px;
+		z-index: 2;
+		
+	}
+
+	// .feedback-popup__image
+
+	&__image {
+		margin-top: -10%;
+		@include _992 {
+			margin-top: -20%;
+		}
+		pointer-events: none; user-select: none;
+		img {
+			@include _992 {
+				transform: translate(15%,0);
+			}
+		}
+	}
 }

@@ -1,0 +1,62 @@
+.fund {
+
+	padding-top: 110px;
+
+	// .fund__decor
+
+	&__decor {
+		position: absolute;
+		right: 0; top: 0;
+		width: 100%; height: 100%;
+		z-index: -1;
+
+		user-select: none; pointer-events: none;
+
+		img {
+			position: absolute;
+			right: 0; top: 0;
+			width: 60%; height: auto;
+			max-width: 534px;
+			transform: translate(25%,0) rotate(-30deg);
+			object-fit: contain;
+			opacity: .7;
+		}
+	}
+
+	// .fund__title
+
+	&__title {
+		max-width: 850px;
+		padding-right: 50px;
+	}
+
+	// .fund__text
+
+	&__text {
+		margin-top: 20px;
+		max-width: 800px;
+	}
+
+	// .fund__footer
+
+	&__footer {
+		max-width: 800px;
+		margin-top: 40px;
+	}
+
+	// .fund__btn
+
+	&__btn {
+	}
+
+	// .fund__link
+
+	&__link {
+		display: inline-block;
+		margin-top: 5px;
+
+		text-decoration: underline;
+		color: var(--accent);
+		font-weight: 300;
+	}
+}

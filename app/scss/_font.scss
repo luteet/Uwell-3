@@ -89,9 +89,33 @@
 	font-size: 1.5rem;
 	line-height: 120%;
 	color: var(--title-color);
+}
 
+.min-title-2 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 130%;
+	
+	@include _992 {
+		font-size: 1.5rem;
+	}
 }
 
 .txt-center {
 	text-align: center;
+}
+
+.text {
+	font-size: 1rem;
+	
+	@include _768 {
+		font-size: 1.25rem;
+	}
+	
+	@include _992 {
+		font-size: 1.375rem;
+	}
+	line-height: 150%;
+	color: var(--dark);
+	font-weight: 400;
 }

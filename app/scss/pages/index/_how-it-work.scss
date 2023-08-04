@@ -1,0 +1,167 @@
+.how-it-work {
+
+	display: grid;
+	gap: 40px 0;
+	@include _992 {
+		grid-template-columns: 1fr 1fr;
+		gap: 50px;
+
+		padding-top: 100px;
+	}
+
+	padding-top: 60px;
+
+	// .how-it-work__decor
+
+	&__decor {
+		display: none;
+		@include _992 {
+			display: block;
+			position: absolute;
+			left: 50%; bottom: 0;
+
+			width: 50%;
+
+			user-select: none; pointer-events: none;
+			z-index: -1;
+
+			opacity: .7;
+
+			img {
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%; height: auto;
+				transform: translate(-110%,-58%) rotate(25deg);
+				max-width: 736px;
+			}
+		}
+	}
+
+	// .how-it-work__content
+
+	&__content {
+	}
+
+	// .how-it-work__title
+
+	&__title {
+	}
+
+	// .how-it-work__text
+
+	&__text {
+		padding-top: 20px;
+
+		p:not(:first-child) {
+			padding-top: 20px;
+		}
+
+		font-size: 1rem;
+		
+		@include _768 {
+			font-size: 1.175rem;
+		}
+		
+		@include _992 {
+			font-size: 1.375rem;
+		}
+		line-height: 150%;
+		font-weight: 400;
+
+		b {
+			font-weight: 700;
+			color: var(--primary-color-1);
+		}
+	}
+
+	// .how-it-work__chat
+
+	&__chat {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .how-it-work__chat-item
+
+	&__chat-item {
+
+		&._author {
+			background: var(--primary-color-1);
+			border-radius: 15px 15px 0 15px;
+			align-self: self-end;
+			margin-right: 0; margin-left: 20px;
+
+			@include _992 {
+				margin-left: 50px;
+				margin-right: 0;
+			}
+		}
+
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+
+		align-self: self-start;
+		margin-right: 20px;
+		@include _992 {
+			margin-right: 50px;
+			padding: 10px 15px;
+		}
+
+		background: #6D9CED;
+
+		border-radius: 15px 15px 15px 0;
+		padding: 5px 15px 5px;
+
+		min-width: 135px;
+
+		// .how-it-work__chat-item--name
+
+		&--name {
+			font-size: 0.75rem;
+			line-height: 300;
+			color: #9EF0FF;
+			line-height: 133%;
+		}
+
+		// .how-it-work__chat-item--text
+
+		&--text {
+			color: #FFF;
+			font-weight: 300;
+			line-height: 150%;
+			font-size: 0.875rem;
+			
+			@include _768 {
+				font-size: 1rem;
+			}
+
+			padding-right: 20px;
+		}
+
+		// .how-it-work__chat-item--footer
+
+		&--footer {
+			text-align: right;
+
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		// .how-it-work__chat-item--time
+
+		&--time {
+			font-size: 0.75rem;
+			line-height: 110%;
+			color: rgba(255, 255, 255, 0.8);
+		}
+
+		// .how-it-work__chat-item--check
+
+		&--check {
+			fill: rgba(255, 255, 255, 0.8);
+			margin-bottom: -5px; margin-left: 5px;
+		}
+	}
+}

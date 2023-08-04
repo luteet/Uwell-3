@@ -5,41 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Uwell</title>
-	<style>
-		.image-body {
-			width: 100%;
-			position: relative;
-		}
-
-		.image-body img {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
-		.wrapper {
-			animation: fadeInAnimation ease 1s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-
-		@keyframes fadeInAnimation {
-			0% {
-				opacity: 0;
-			}
-
-			100% {
-				opacity: 1;
-			}
-		}
-	</style>
 	<link rel="stylesheet" href="css/style-critical.min.css">
 	<link rel="stylesheet" href="css/style.min.css" id="lazy-styles" media="print">
 	<script>
 		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+		document.querySelector('html').style.setProperty("--svh", window.innerHeight * 0.01 + "px");
 		document.addEventListener('DOMContentLoaded', function(event) {
 			const lazyStyles = document.getElementById('lazy-styles');
 			setTimeout(() => {
@@ -61,23 +31,8 @@
 					<div class="header__nav--body">
 						<ul class="header__nav--list">
 							<li>
-								<a href="/#about-us" class="scroll-link">
-									Про нас
-								</a>
-							</li>
-							<li>
-								<a href="/#how-work" class="scroll-link">
-									Як це працює
-								</a>
-							</li>
-							<li>
-								<a href="/#subscribe" class="scroll-link">
-									Підписка
-								</a>
-							</li>
-							<li>
-								<a href="/#price" class="scroll-link">
-									Ціни
+								<a href="/#approach" class="scroll-link">
+									Підхід
 								</a>
 							</li>
 							<li>
@@ -86,8 +41,28 @@
 								</a>
 							</li>
 							<li>
+								<a href="/#how-it-work" class="scroll-link">
+									Як це працює
+								</a>
+							</li>
+							<li>
+								<a href="/#tariffs" class="scroll-link">
+									Тарифи
+								</a>
+							</li>
+							<li>
 								<a href="/#our-partners" class="scroll-link">
 									Партнери
+								</a>
+							</li>
+							<li>
+								<a href="/#fund" class="scroll-link">
+									Фонд
+								</a>
+							</li>
+							<li>
+								<a href="/#faq" class="scroll-link">
+									F.A.Q
 								</a>
 							</li>
 							<li>
@@ -129,7 +104,7 @@
 					</h2>
 					<div class="app__text">
 						<p>
-							Завантажте медичний додаток і реєструйтесь в ньому. Ваш сімейний лікар та усі переваги сервісу вже готові Вам допомогти.
+							Завантажте медичний додаток і зареєструйтесь в ньому. Сімейний лікар та усі переваги сервісу вже готові Вам допомогти.
 						</p>
 					</div>
 					<div class="app__footer">
@@ -160,16 +135,23 @@
 				<h3>Підписуйтесь:</h3>
 				<ul>
 					<li>
-						<a href="https://www.facebook.com/uwell.care" title="Facebook">
+						<a href="https://www.facebook.com/uwell.care" target="_blank" title="Facebook">
 							<svg width="21" height="22" viewBox="0 0 21 22">
 								<use xlink:href="img/sprites.svg#facebook"></use>
 							</svg>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.instagram.com/uwell.care/" title="Instagram">
+						<a href="https://www.instagram.com/uwell.care/" target="_blank" title="Instagram">
 							<svg width="19" height="19" viewBox="0 0 19 19">
 								<use xlink:href="img/sprites.svg#instagram"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" target="_blank" title="Instagram">
+							<svg width="21" height="22" viewBox="0 0 21 22">
+								<use xlink:href="img/sprites.svg#linkedIn"></use>
 							</svg>
 						</a>
 					</li>
@@ -307,6 +289,49 @@
 						</li>
 					</ul>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__container">
+				<form method="post" class="feedback-popup__body popup-body">
+					<div class="feedback-popup__body--wrapper">
+						<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+							<svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="28.9708" y1="2.06066" x2="1.06388" y2="29.9676" stroke="white" stroke-width="3" />
+								<line x1="1.06066" y1="1.84632" x2="28.9676" y2="29.7533" stroke="white" stroke-width="3" />
+							</svg>
+						</button>
+						<h2 class="feedback-popup__title">
+							Форма зворотнього звʼязку
+						</h2>
+						<label class="feedback-popup__label">
+							<input type="text" name="name" placeholder="Ваше ім'я" required class="feedback-popup__input">
+						</label>
+						<label class="feedback-popup__label">
+							<input type="tel" name="tel" placeholder="Номер телефону" required class="feedback-popup__input">
+						</label>
+						<label class="feedback-popup__label">
+							<input type="email" name="email" placeholder="Email" required class="feedback-popup__input">
+						</label>
+						<label class="feedback-popup__label">
+							<input type="text" name="message" placeholder="Коментар/питання/зручний час для дзвінку" required class="feedback-popup__input">
+						</label>
+						<button class="feedback-popup__btn btn" type="submit">
+							Відправити
+						</button>
+					</div>
+					<div class="feedback-popup__image image-body">
+						<picture>
+							<source srcset="img/popup-image.avif" type="image/avif">
+							<source srcset="img/popup-image.webp" type="image/webp">
+							<img src="img/popup-image.png" alt="" width="641" height="277" loading="lazy">
+						</picture>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

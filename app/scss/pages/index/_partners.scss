@@ -2,12 +2,19 @@
 
 	padding-top: 65px;
 	@include _768 {
-		padding-top: 30px;
+		padding-top: 163px;
 	}
 
 	// .partners__title
 
 	&__title {
+	}
+
+	// .partners__text
+
+	&__text {
+		max-width: 874px;
+		margin-top: 20px;
 	}
 
 	// .partners__slider
@@ -23,6 +30,7 @@
 
 		.splide__arrow {
 			background: transparent;
+			z-index: 2;
 			transition: opacity .2s ease;
 			&[disabled] {
 				opacity: 1;
