@@ -124,8 +124,6 @@
 			padding: 0 43px 5px; margin-top: 32px;
 		}
 
-		
-
 		// .tariffs__card--price
 
 		&--price {
@@ -151,13 +149,18 @@
 			font-weight: 300;
 		}
 
-		&--min-text {
+		&--min-text, &--min-text-2 {
 			margin-top: 10px;
 			color: var(--text-color);
 			font-weight: 300;
 			line-height: 140%;
 			display: block;
 			text-align: center;
+		}
+
+		&--min-text-2 {
+			font-size: 0.875rem;
+			margin-top: 0;
 		}
 
 		&--note {

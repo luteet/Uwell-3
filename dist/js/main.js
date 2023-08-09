@@ -1,5 +1,5 @@
 
-const 
+const
 	body = document.querySelector('body'),
 	html = document.querySelector('html'),
 	menu = document.querySelectorAll('.header__burger, .header__nav, body'),
@@ -12,11 +12,11 @@ const
 const imageBody = document.querySelectorAll('.image-body, figure');
 imageBody.forEach(imageBody => {
 	const img = imageBody.querySelector('img'), style = getComputedStyle(imageBody);
-	if(img) {
-		if(img.getAttribute('width') && img.getAttribute('height') && style.position == "relative")
-		imageBody.style.paddingTop = Number(img.getAttribute('height')) / Number(img.getAttribute('width')) * 100 + '%';
+	if (img) {
+		if (img.getAttribute('width') && img.getAttribute('height') && style.position == "relative")
+			imageBody.style.paddingTop = Number(img.getAttribute('height')) / Number(img.getAttribute('width')) * 100 + '%';
 	}
-	
+
 })
 
 // =-=-=-=-=-=-=-=-=-=- </image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
@@ -44,39 +44,39 @@ body.addEventListener('click', function (event) {
 
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
-	
+
 	let btnToScroll = $('.scroll-link');
-	if(btnToScroll && (window.location.pathname === '/' || window.location.pathname[1] === '#') ) {
+	if (btnToScroll && (window.location.pathname === '/' || window.location.pathname[1] === '#')) {
 		event.preventDefault();
 		let section;
-	
+
 		section = document.querySelector(btnToScroll.getAttribute('href').slice(1))
-	
+
 		menu.forEach(elem => {
 			elem.classList.remove('_mob-menu-active')
 		})
-	
-		if(section) {
+
+		if (section) {
 			section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 		} else {
 			body.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 		}
-	
+
 	}
-	
+
 	// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
 
-	
-	// =-=-=-=-=-=-=-=-=-=-=-=- <FAQ> -=-=-=-=-=-=-=-=-=-=-=-=
-	
-	const faqQuestion = $(".faq__question")
-	if(faqQuestion) {
-	
-		const faqItem = faqQuestion.parentElement,
-		activeFaqItem = document.querySelector('.faq__item._active');
 
-		if(activeFaqItem) {
-			if(activeFaqItem == faqItem) {
+	// =-=-=-=-=-=-=-=-=-=-=-=- <FAQ> -=-=-=-=-=-=-=-=-=-=-=-=
+
+	const faqQuestion = $(".faq__question")
+	if (faqQuestion) {
+
+		const faqItem = faqQuestion.parentElement,
+			activeFaqItem = document.querySelector('.faq__item._active');
+
+		if (activeFaqItem) {
+			if (activeFaqItem == faqItem) {
 				activeFaqItem.classList.remove('_active')
 			} else {
 				activeFaqItem.classList.remove('_active')
@@ -85,9 +85,9 @@ body.addEventListener('click', function (event) {
 		} else {
 			faqItem.classList.add('_active')
 		}
-	
+
 	}
-	
+
 	// =-=-=-=-=-=-=-=-=-=-=-=- </FAQ> -=-=-=-=-=-=-=-=-=-=-=-=	
 
 })
@@ -103,7 +103,7 @@ let windowSize = 0;
 function resize() {
 
 	html.style.setProperty("--height-header", header.offsetHeight + "px");
-	if(windowSize != window.innerWidth) {
+	if (windowSize != window.innerWidth) {
 		html.style.setProperty("--svh", window.innerHeight * 0.01 + "px");
 	}
 	html.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
@@ -122,7 +122,7 @@ window.addEventListener('resize', resize)
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
-if(document.querySelector('.partners__slider')) {
+if (document.querySelector('.partners__slider')) {
 	const partnersSlider = new Splide('.partners__slider', {
 		type: "loop",
 		autoWidth: true,
@@ -147,9 +147,9 @@ if(document.querySelector('.partners__slider')) {
 let coordsY;
 function scroll() {
 	coordsY = Math.abs(body.getBoundingClientRect().y);
-	if(coordsY > 0 && !header.classList.contains('_scroll')) {
+	if (coordsY > 0 && !header.classList.contains('_scroll')) {
 		header.classList.add('_scroll');
-	} else if(coordsY <= 0 && header.classList.contains('_scroll')) {
+	} else if (coordsY <= 0 && header.classList.contains('_scroll')) {
 		header.classList.remove('_scroll');
 	}
 }
@@ -165,8 +165,8 @@ document.addEventListener('scroll', scroll);
 const doctorCardVideoWrapper = document.querySelectorAll('.doctor-card__video--wrapper');
 doctorCardVideoWrapper.forEach(doctorCardVideoWrapper => {
 	const video = doctorCardVideoWrapper.querySelector('video');
-	if(video) {
-		if(video.getAttribute('width') && video.getAttribute('height')) {
+	if (video) {
+		if (video.getAttribute('width') && video.getAttribute('height')) {
 			doctorCardVideoWrapper.style.setProperty('--aspect-ratio', Number(video.getAttribute('height')) / Number(video.getAttribute('width')) * 100 + '%');
 		}
 	}
@@ -256,6 +256,14 @@ function Popup(arg) {
 					}
 
 					popupCheckClose = true;
+					if(document.querySelector('._sended')) document.querySelector('._sended').classList.remove('_sended');
+					if(document.querySelector('._sending')) document.querySelector('._sending').classList.remove('_sending');
+
+					const inputs = popup.querySelectorAll('input');
+					inputs.forEach(input => {
+						input.value = '';
+					})
+
 					popup.removeEventListener('transitionend', closeFunc)
 				}
 
@@ -286,15 +294,22 @@ function Popup(arg) {
 				let popupOpen = thisTarget.closest('.open-popup');
 				if (popupOpen) {
 					event.preventDefault();
-					open(popupOpen.getAttribute('href'))
+					open(popupOpen.getAttribute('href'));
+
+					if(popupOpen.dataset.theme) {
+						document.querySelector(popupOpen.getAttribute('href')).setAttribute('data-theme', popupOpen.dataset.theme)
+					} else {
+						document.querySelector(popupOpen.getAttribute('href')).removeAttribute('data-theme')
+					}
+					
 				}
 
 				let popupClose = thisTarget.closest('.popup-close');
 				if (popupClose) {
 					close(popupClose);
 					const popup = thisTarget.closest('.popup');
-					if(popup.dataset.timer) localStorage.setItem("uwell-2-application-popup", true);
-					
+					if (popup.dataset.timer) localStorage.setItem("uwell-2-application-popup", true);
+
 				}
 
 			});
@@ -302,9 +317,9 @@ function Popup(arg) {
 			const popups = document.querySelectorAll('.popup');
 			popups.forEach(popup => {
 				let timer = popup.dataset.timer;
-				if(timer && localStorage.getItem("uwell-2-application-popup") != "true") {
-					if(Number(timer)) timer = Number(timer) * 1000;
-					
+				if (timer && localStorage.getItem("uwell-2-application-popup") != "true") {
+					if (Number(timer)) timer = Number(timer) * 1000;
+
 					setTimeout(() => {
 						open("#" + popup.getAttribute('id'));
 					}, timer)
@@ -324,5 +339,43 @@ function Popup(arg) {
 
 const popup = new Popup();
 
-popup.init()
+popup.init();
+
+const feedbackPopupBody = document.querySelector('.feedback-popup__body');
+feedbackPopupBody.addEventListener('submit', function (event) {
+	event.preventDefault()
+
+	feedbackPopupBody.classList.add('_sending');
+	const wrapper = feedbackPopupBody.querySelector('.feedback-popup__body--wrapper');
+
+	let data_body = feedbackPopupBody.closest('.popup').dataset.theme ? `theme=${feedbackPopupBody.closest('.popup').dataset.theme}` : `Заявка з сайту`;
+	const inputs = wrapper.querySelectorAll('input');
+	inputs.forEach((input, index) => {
+		if(input.value) {
+			data_body += `&${input.name}=${input.value}`;
+		}
+	})
+
+	fetch("mail.php", {
+		method: "POST",
+		body: data_body,
+		headers: { "content-type": "application/x-www-form-urlencoded" }
+	})
+
+	.then((response) => {
+		if (response.status !== 200) {
+			return Promise.reject();
+		}
+
+		if(response.text()) {
+			setTimeout(() => {
+				feedbackPopupBody.classList.remove('_sending');
+				feedbackPopupBody.classList.add('_sended');
+			},500)
+		}
+	})
+	.then(i => console.log(i))
+	.catch(() => console.log('ошибка'));	
+
+})
 
