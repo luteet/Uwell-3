@@ -66,7 +66,7 @@
 	// .hero__content
 
 	&__content {
-		max-width: 908px; width: 100%;
+		
 		text-align: center;
 	}
 
@@ -74,12 +74,14 @@
 
 	&__title {
 		color: var(--primary-color-1);
+		max-width: 1008px; width: 100%;
 	}
 
 	// .hero__text
 
 	&__text {
 		margin-top: 15px;
+		max-width: 900px; width: 100%;
 
 		font-weight: 300;
 		font-size: 1.125rem;

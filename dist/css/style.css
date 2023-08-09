@@ -1,3 +1,9 @@
+.new-approach__decor,.symptoms__background {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    opacity: .7
+}
+
 .symptoms {
     padding-top: 80px;
     padding-bottom: 0;
@@ -11,9 +17,6 @@
     width: 100%;
     padding-top: 50%;
     z-index: -1;
-    opacity: .7;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     pointer-events: none
 }
@@ -52,6 +55,10 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 150%
+}
+
+.fund__number,.new-approach__text {
+    -webkit-font-feature-settings: "clig" off,"liga" off
 }
 
 .symptoms__text--item:not(:first-child) {
@@ -153,6 +160,12 @@
     padding-top: 10px;
     max-width: 715px;
     font-size: .875rem;
+    font-weight: 300;
+    line-height: 150%
+}
+
+.app-for-you__text,.how-it-work__text,.new-approach__text {
+    font-size: 1rem;
     line-height: 150%
 }
 
@@ -166,9 +179,6 @@
     right: 0;
     top: 0;
     width: 50%;
-    opacity: .7;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     pointer-events: none;
     z-index: -1
@@ -176,6 +186,7 @@
 
 .app-for-you__decor,.fund__decor {
     -webkit-user-select: none;
+    top: 0;
     z-index: -1;
     pointer-events: none
 }
@@ -198,10 +209,7 @@
 
 .new-approach__text {
     padding-top: 20px;
-    -webkit-font-feature-settings: "clig" off,"liga" off;
     font-feature-settings: "clig" off,"liga" off;
-    font-size: 1rem;
-    line-height: 150%;
     max-width: 100%
 }
 
@@ -247,23 +255,27 @@
     color: var(--title-color)
 }
 
-.new-approach__service--list {
-    margin-top: 20px
-}
-
-.new-approach__service--list li {
-    padding-left: 17px;
-    position: relative;
+.new-approach__service--text {
+    margin-top: 20px;
     font-size: .875rem;
     line-height: 150%;
     font-weight: 300
 }
 
-.new-approach__service--list li:not(:first-child) {
+.new-approach__service--text ul {
+    margin-top: 20px
+}
+
+.how-it-work__chat-item:not(:first-child),.new-approach__service--text li:not(:first-child) {
     margin-top: 10px
 }
 
-.new-approach__service--list li::before {
+.new-approach__service--text li {
+    padding-left: 17px;
+    position: relative
+}
+
+.new-approach__service--text li::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -285,7 +297,6 @@
 .app-for-you__decor {
     position: absolute;
     left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -303,10 +314,8 @@
 }
 
 .app-for-you__text {
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 150%
+    margin-top: 20px;
+    font-weight: 300
 }
 
 .app-for-you__text p:not(:first-child) {
@@ -349,13 +358,15 @@
 
 .how-it-work__text {
     padding-top: 20px;
-    font-size: 1rem;
-    line-height: 150%;
     font-weight: 400
 }
 
 .how-it-work__text p:not(:first-child) {
     padding-top: 20px
+}
+
+.how-it-work__text li:not(:first-child) {
+    margin-top: 20px
 }
 
 .how-it-work__text b {
@@ -365,7 +376,20 @@
 
 .how-it-work__chat {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    padding: 20px 0;
+    position: relative
+}
+
+.how-it-work__chat::before {
+    content: "";
+    position: absolute;
+    left: calc(0px - var(--container-padding));
+    top: 0;
+    width: calc(100% + var(--container-padding) *2);
+    height: 100%;
+    background: var(--primary-color-light);
+    z-index: -1
 }
 
 .how-it-work__chat-item {
@@ -383,10 +407,6 @@
     align-self: self-end;
     margin-right: 0;
     margin-left: 20px
-}
-
-.how-it-work__chat-item:not(:first-child) {
-    margin-top: 10px
 }
 
 .how-it-work__chat-item--name {
@@ -502,16 +522,15 @@
     margin-top: 32px
 }
 
+.tariffs__card._has-note .tariffs__card--footer {
+    padding: 0 43px 5px;
+    margin-top: 32px
+}
+
 .tariffs__card--price {
     font-size: 1.5rem;
     line-height: 150%;
     color: var(--title-color)
-}
-
-.fund__link,.tariffs__card--link {
-    text-decoration: underline;
-    color: var(--accent);
-    font-weight: 300
 }
 
 .tariffs__card--btn {
@@ -520,7 +539,29 @@
 
 .tariffs__card--link {
     display: inline-block;
-    margin-top: 10px
+    margin-top: 10px;
+    text-decoration: underline;
+    color: var(--accent);
+    font-weight: 300
+}
+
+.tariffs__card--min-text,.tariffs__card--note {
+    line-height: 140%;
+    display: block;
+    text-align: center;
+    font-weight: 300
+}
+
+.tariffs__card--min-text {
+    margin-top: 10px;
+    color: var(--text-color)
+}
+
+.tariffs__card--note {
+    color: var(--primary-color-2);
+    font-size: .4375rem;
+    padding-top: 10px;
+    margin: 0 -15px
 }
 
 .tariffs__card--logo {
@@ -536,23 +577,22 @@
     background: #e9fbfa
 }
 
-.fund__decor,.fund__decor img {
-    position: absolute;
-    top: 0;
-    right: 0
-}
-
 .fund {
     padding-top: 110px
 }
 
 .fund__decor {
+    position: absolute;
+    right: 0;
     width: 100%;
     height: 100%;
     user-select: none
 }
 
 .fund__decor img {
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 60%;
     height: auto;
     max-width: 534px;
@@ -574,13 +614,27 @@
 }
 
 .fund__footer {
-    max-width: 800px;
-    margin-top: 40px
+    max-width: 600px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.fund__number {
+    padding-left: 10px;
+    color: var(--text-color);
+    font-feature-settings: "clig" off,"liga" off;
+    line-height: 150%
 }
 
 .fund__link {
     display: inline-block;
-    margin-top: 5px
+    margin-top: 5px;
+    text-decoration: underline;
+    color: var(--accent);
+    font-weight: 300;
+    padding: 0 10px
 }
 
 .footer__logo--text,.footer__nav a,.footer__nav h3,.footer__social h3,.leave-question__body,.leave-question__text,.leave-question__title {
@@ -1005,6 +1059,10 @@
         font-size: 1.175rem
     }
 
+    .treatment-options__card--text,.what-to-do__text {
+        font-size: 1.125rem
+    }
+
     .treatment-options {
         padding-top: 50px
     }
@@ -1015,15 +1073,15 @@
         border: 3px solid var(--primary-color-1)
     }
 
-    .treatment-options__card--text,.what-to-do__text {
-        font-size: 1.125rem
+    .what-to-do__text {
+        padding-top: 20px
     }
 
     .new-approach__text {
         font-size: 1.175rem
     }
 
-    .new-approach__service--list li {
+    .new-approach__service--text {
         font-size: 1rem
     }
 
@@ -1159,7 +1217,6 @@
 
     .faq__decor,.how-it-work__decor {
         display: block;
-        z-index: -1;
         pointer-events: none
     }
 
@@ -1266,7 +1323,7 @@
         margin: 0 auto -80px
     }
 
-    .new-approach__service--list li {
+    .new-approach__service--text {
         font-size: 1.125rem
     }
 
@@ -1330,21 +1387,34 @@
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        z-index: -1;
         opacity: .7
     }
 
-    .faq__decor,.how-it-work__decor img {
+    .how-it-work__decor img {
+        position: absolute;
+        left: 0;
         top: 0;
         width: 100%;
-        position: absolute;
-        left: 0
+        height: auto;
+        -webkit-transform: translate(-110%,-50%) rotate(25deg);
+        transform: translate(-110%,-50%) rotate(25deg);
+        max-width: 736px
     }
 
-    .how-it-work__decor img {
-        height: auto;
-        -webkit-transform: translate(-110%,-58%) rotate(25deg);
-        transform: translate(-110%,-58%) rotate(25deg);
-        max-width: 736px
+    .how-it-work__chat {
+        padding: 0
+    }
+
+    .how-it-work__chat::before {
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        border-radius: 40px;
+        width: 90%;
+        height: 110%;
+        border: 3px solid var(--primary-color-1)
     }
 
     .how-it-work__chat-item._author {
@@ -1366,7 +1436,12 @@
     }
 
     .faq__decor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
         height: 100%;
+        z-index: -1;
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none
@@ -1447,7 +1522,7 @@ progress,sub,sup {
     position: relative
 }
 
-.popup,.splide {
+.header__nav,.popup,.splide {
     visibility: hidden
 }
 
@@ -1648,14 +1723,14 @@ summary {
 
 .splide__sr,.visually-hidden {
     width: 1px;
-    margin: -1px;
+    height: 1px;
     overflow: hidden
 }
 
 .splide__sr {
     clip: rect(0 0 0 0);
     border: 0;
-    height: 1px;
+    margin: -1px;
     padding: 0;
     position: absolute
 }
@@ -1703,11 +1778,6 @@ summary {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none
-}
-
-.feedback-popup__image,.hero__bg,.hero__decor-text {
-    -ms-user-select: none;
-    pointer-events: none
 }
 
 .splide__track--fade>.splide__list>.splide__slide {
@@ -1832,6 +1902,11 @@ summary {
     height: 3px
 }
 
+.image-body img,.popup,.popup-bg {
+    height: 100%;
+    left: 0
+}
+
 .splide__slide:focus {
     outline: 0
 }
@@ -1916,7 +1991,7 @@ summary {
     top: 0
 }
 
-*,fieldset {
+*,.visually-hidden,fieldset {
     padding: 0
 }
 
@@ -2022,10 +2097,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .image-body img {
     position: absolute;
-    left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
     -o-object-fit: cover;
     object-fit: cover
 }
@@ -2152,20 +2225,12 @@ section {
 
 .visually-hidden {
     position: absolute;
-    height: 1px;
-    padding: 0;
+    margin: -1px;
     border: 0;
     white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
-}
-
-.popup,.popup-bg {
-    top: 0;
-    height: 100%;
-    width: 100%;
-    left: 0
 }
 
 .decor-accent-text {
@@ -2298,6 +2363,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .popup {
     position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -2329,6 +2396,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .popup-bg {
     position: absolute;
+    top: 0;
+    width: 100%;
     background: #000;
     opacity: .7
 }
@@ -2494,7 +2563,9 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .feedback-popup__image {
     margin-top: -10%;
+    pointer-events: none;
     -webkit-user-select: none;
+    -ms-user-select: none;
     user-select: none
 }
 
@@ -2547,7 +2618,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     overflow-y: auto;
     overflow-x: hidden;
     opacity: 0;
-    visibility: hidden;
     transition: opacity .3s ease,visibility .3s ease
 }
 
@@ -2725,7 +2795,9 @@ input:focus::placeholder,textarea:focus::placeholder {
     height: 100%;
     background: linear-gradient(269.37deg,rgba(233,251,250,0) 49.97%,#69DBC8 135.98%),linear-gradient(69.37deg,rgba(233,251,250,0) 49.97%,#69DBC8 135.98%) #e9fbfa;
     -webkit-user-select: none;
-    user-select: none
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none
 }
 
 .hero__bg--element {
@@ -2756,17 +2828,16 @@ input:focus::placeholder,textarea:focus::placeholder {
     height: auto
 }
 
-.hero__content {
-    max-width: 908px;
-    width: 100%
-}
-
 .hero__title {
-    color: var(--primary-color-1)
+    color: var(--primary-color-1);
+    max-width: 1008px;
+    width: 100%
 }
 
 .hero__text {
     margin-top: 15px;
+    max-width: 900px;
+    width: 100%;
     font-weight: 300;
     font-size: 1.125rem;
     color: var(--title-color);
@@ -2792,7 +2863,9 @@ input:focus::placeholder,textarea:focus::placeholder {
     top: 100%;
     -webkit-transform: translate(20%,50%) rotate(-10deg);
     transform: translate(20%,50%) rotate(-10deg);
+    pointer-events: none;
     -webkit-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     color: #3848d0;
     font-size: 1.625rem;
@@ -2876,9 +2949,13 @@ input:focus::placeholder,textarea:focus::placeholder {
     grid-template-columns: 80px auto
 }
 
+.doctor-card__info:not(:first-child) {
+    padding-top: 40px
+}
+
 .doctor-card__avatar {
     padding-right: 10px;
-    grid-row: 3 span
+    grid-row: 2 span
 }
 
 .doctor-card__avatar img {
@@ -2905,7 +2982,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .doctor-card__experience {
-    margin-top: 5px;
+    margin-top: 10px;
     font-weight: 700;
     font-size: .875rem;
     line-height: 130%;

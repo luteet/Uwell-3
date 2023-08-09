@@ -120,6 +120,9 @@
 	// .doctor-card__info
 
 	&__info {
+		&:not(:first-child) {
+			padding-top: 40px;
+		}
 		display: grid;
 		grid-template-columns: 80px auto;
 		@include _768 {
@@ -135,7 +138,7 @@
 		@include _768 {
 			padding-right: 20px;
 		}
-		grid-row: 3 span;
+		grid-row: 2 span;
 		img {
 			border-radius: 50%;
 			width: 70px; height: 70px;
@@ -195,7 +198,7 @@
 	// .doctor-card__experience
 
 	&__experience {
-		margin-top: 5px;
+		margin-top: 10px;
 		font-weight: 700;
 		font-size: 0.875rem;
 		@include _550 {

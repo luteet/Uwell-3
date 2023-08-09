@@ -40,8 +40,20 @@
 	// .fund__footer
 
 	&__footer {
-		max-width: 800px;
+		max-width: 600px;
 		margin-top: 40px;
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__number {
+		padding-left: 10px;
+
+		color: var(--text-color);
+		font-feature-settings: 'clig' off, 'liga' off;
+		line-height: 150%;
 	}
 
 	// .fund__btn
@@ -58,5 +70,7 @@
 		text-decoration: underline;
 		color: var(--accent);
 		font-weight: 300;
+
+		padding: 0 10px;
 	}
 }

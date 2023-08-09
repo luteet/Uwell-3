@@ -31,7 +31,7 @@
 				position: absolute;
 				left: 0; top: 0;
 				width: 100%; height: auto;
-				transform: translate(-110%,-58%) rotate(25deg);
+				transform: translate(-110%,-50%) rotate(25deg);
 				max-width: 736px;
 			}
 		}
@@ -68,6 +68,10 @@
 		line-height: 150%;
 		font-weight: 400;
 
+		li:not(:first-child) {
+			margin-top: 20px;
+		}
+
 		b {
 			font-weight: 700;
 			color: var(--primary-color-1);
@@ -79,6 +83,29 @@
 	&__chat {
 		display: flex;
 		flex-direction: column;
+
+		padding: 20px 0;
+		@include _992 {
+			padding: 0;
+		}
+
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: calc(0px - var(--container-padding)); top: 0;
+			width: calc(100% + var(--container-padding) * 2); height: 100%;
+			@include _992 {
+				left: 50%; top: 50%;
+				transform: translate(-50%,-50%);
+				border-radius: 40px;
+				width: 90%; height: 110%;
+				border: 3px solid var(--primary-color-1);
+			}
+			
+			background: var(--primary-color-light);
+			z-index: -1;
+		}
 	}
 
 	// .how-it-work__chat-item

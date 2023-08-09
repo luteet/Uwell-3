@@ -120,6 +120,12 @@
 			padding: 0 43px 33px; margin-top: 32px;
 		}
 
+		&._has-note &--footer {
+			padding: 0 43px 5px; margin-top: 32px;
+		}
+
+		
+
 		// .tariffs__card--price
 
 		&--price {
@@ -143,6 +149,27 @@
 			text-decoration: underline;
 			color: var(--accent);
 			font-weight: 300;
+		}
+
+		&--min-text {
+			margin-top: 10px;
+			color: var(--text-color);
+			font-weight: 300;
+			line-height: 140%;
+			display: block;
+			text-align: center;
+		}
+
+		&--note {
+			color: var(--primary-color-2);
+			text-align: center;
+			font-size: 0.4375rem;
+			font-weight: 300;
+			line-height: 140%;
+
+			display: block;
+			padding-top: 10px;
+			margin: 0 -15px;
 		}
 
 		// .tariffs__card--logo
