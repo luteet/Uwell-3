@@ -88,7 +88,53 @@ body.addEventListener('click', function (event) {
 
 	}
 
-	// =-=-=-=-=-=-=-=-=-=-=-=- </FAQ> -=-=-=-=-=-=-=-=-=-=-=-=	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </FAQ> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <pay-crypto> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const payCrypto = $(".pay-crypto")
+	if(payCrypto) {
+
+		event.preventDefault();
+
+		if(payCrypto.dataset.amount) {
+	
+			fetch("https://api.whitepay.com/private-api/crypto-orders/uwell", { 
+				method: "POST",
+				body: JSON.stringify({
+					"amount": "10",
+					"currency": "USDT",
+					"successful_link": "https://uwell.care/app.html",
+					"failure_link": "https://uwell.care/fail.html"
+				}),
+				mode: "no-cors",
+				headers: new Headers({
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+					'Authorization': 'Bearer efWcQ9HnlnPmEnJrtUehewTcrdAZVkYLkWR8fZZd',
+				}),
+			})
+			
+			.then( (response) => {
+			if (response.status !== 200) {
+				return Promise.reject();
+			}
+			return response.json()
+			})
+			.then(data => {
+				if(data['order']['acquiring_url']) {
+					window.location.href = data['order']['acquiring_url'];
+				}
+			})
+			.catch(() => console.log('ошибка')); 
+
+		}
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </pay-crypto> -=-=-=-=-=-=-=-=-=-=-=-=
 
 })
 
@@ -378,4 +424,6 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 	.catch(() => console.log('ошибка'));	
 
 })
+
+
 
