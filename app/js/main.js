@@ -402,9 +402,10 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 		}
 	})
 
-	fetch("mail.php", {
+	fetch("https://api.uwell.care/api/mail/send", {
 		method: "POST",
 		body: data_body,
+		mode: 'no-cors',
 		headers: { "content-type": "application/x-www-form-urlencoded" }
 	})
 
@@ -413,14 +414,14 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 			return Promise.reject();
 		}
 
-		if(response.text()) {
-			setTimeout(() => {
-				feedbackPopupBody.classList.remove('_sending');
-				feedbackPopupBody.classList.add('_sended');
-			},500)
-		}
+		return response.text();
 	})
-	.then(i => console.log(i))
+	.then(data => {
+		setTimeout(() => {
+			feedbackPopupBody.classList.remove('_sending');
+			feedbackPopupBody.classList.add('_sended');
+		},500)
+	})
 	.catch(() => console.log('ошибка'));	
 
 })
