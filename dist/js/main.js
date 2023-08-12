@@ -90,52 +90,6 @@ body.addEventListener('click', function (event) {
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- </FAQ> -=-=-=-=-=-=-=-=-=-=-=-=
 
-
-
-	// =-=-=-=-=-=-=-=-=-=-=-=- <pay-crypto> -=-=-=-=-=-=-=-=-=-=-=-=
-	
-	const payCrypto = $(".pay-crypto")
-	if(payCrypto) {
-
-		event.preventDefault();
-
-		if(payCrypto.dataset.amount) {
-	
-			fetch("https://api.whitepay.com/private-api/crypto-orders/uwell", { 
-				method: "POST",
-				body: JSON.stringify({
-					"amount": "10",
-					"currency": "USDT",
-					"successful_link": "https://uwell.care/app.html",
-					"failure_link": "https://uwell.care/fail.html"
-				}),
-				mode: "no-cors",
-				headers: new Headers({
-					'Accept': 'application/json',
-					'Content-Type': 'application/json',
-					'Authorization': 'Bearer efWcQ9HnlnPmEnJrtUehewTcrdAZVkYLkWR8fZZd',
-				}),
-			})
-			
-			.then( (response) => {
-			if (response.status !== 200) {
-				return Promise.reject();
-			}
-			return response.json()
-			})
-			.then(data => {
-				if(data['order']['acquiring_url']) {
-					window.location.href = data['order']['acquiring_url'];
-				}
-			})
-			.catch(() => console.log('ошибка')); 
-
-		}
-	
-	}
-	
-	// =-=-=-=-=-=-=-=-=-=-=-=- </pay-crypto> -=-=-=-=-=-=-=-=-=-=-=-=
-
 })
 
 // =-=-=-=-=-=-=-=-=-=- </click events> -=-=-=-=-=-=-=-=-=-=-
@@ -394,7 +348,7 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 	feedbackPopupBody.classList.add('_sending');
 	const wrapper = feedbackPopupBody.querySelector('.feedback-popup__body--wrapper');
 
-	let data_body = feedbackPopupBody.closest('.popup').dataset.theme ? `theme=${feedbackPopupBody.closest('.popup').dataset.theme}` : `Заявка з сайту`;
+	let data_body = feedbackPopupBody.closest('.popup').dataset.theme ? `theme=${feedbackPopupBody.closest('.popup').dataset.theme}` : `theme=заявка-з-сайту`;
 	const inputs = wrapper.querySelectorAll('input');
 	inputs.forEach((input, index) => {
 		if(input.value) {
@@ -422,7 +376,7 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 			feedbackPopupBody.classList.add('_sended');
 		},500)
 	})
-	.catch(() => console.log('ошибка'));	
+	.catch(() => console.log('ошибка'));
 
 })
 
