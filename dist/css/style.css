@@ -1525,16 +1525,12 @@ progress,sub,sup {
     padding: 0
 }
 
-.popup,.splide {
-    visibility: hidden
-}
-
 .splide,.splide__container,.splide__slide,sub,sup {
     position: relative
 }
 
-.application-popup__title,.btn,.feedback-popup__result,.header__nav--list li,.hero__content,.hero__decor-text,.txt-center {
-    text-align: center
+.header__nav,.popup,.splide {
+    visibility: hidden
 }
 
 body {
@@ -1627,10 +1623,6 @@ legend {
 
 textarea {
     overflow: auto
-}
-
-.main,.splide__sr,.splide__track,.visually-hidden,body._mob-menu-active,body._popup-active {
-    overflow: hidden
 }
 
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
@@ -1732,14 +1724,18 @@ summary {
     width: 20px
 }
 
+.splide__sr,.visually-hidden {
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
 .splide__sr {
     clip: rect(0 0 0 0);
     border: 0;
-    height: 1px;
     margin: -1px;
     padding: 0;
-    position: absolute;
-    width: 1px
+    position: absolute
 }
 
 .splide__toggle.is-active .splide__toggle__play,.splide__toggle__pause {
@@ -1751,6 +1747,7 @@ summary {
 }
 
 .splide__track {
+    overflow: hidden;
     position: relative;
     z-index: 0
 }
@@ -2151,8 +2148,8 @@ body {
     padding-right: var(--popup-padding)
 }
 
-.decor-accent-text,.hero__decor-text {
-    font-family: Caveat
+body._mob-menu-active,body._popup-active {
+    overflow: hidden
 }
 
 ::selection {
@@ -2177,6 +2174,7 @@ section {
 }
 
 .main {
+    overflow: hidden;
     flex: 1 0 auto;
     padding-bottom: 65px
 }
@@ -2198,6 +2196,7 @@ section {
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 155.555556%;
+    text-align: center;
     text-transform: uppercase;
     background: #ff822e;
     border: 2px solid #ff822e;
@@ -2223,8 +2222,6 @@ section {
 
 .visually-hidden {
     position: absolute;
-    width: 1px;
-    height: 1px;
     margin: -1px;
     padding: 0;
     border: 0;
@@ -2234,13 +2231,8 @@ section {
     clip: rect(0 0 0 0)
 }
 
-.popup,.popup-bg {
-    height: 100%;
-    width: 100%;
-    top: 0
-}
-
 .decor-accent-text {
+    font-family: Caveat;
     font-size: 2rem;
     line-height: 110%;
     color: #23427f
@@ -2322,6 +2314,10 @@ section {
     line-height: 130%
 }
 
+.txt-center {
+    text-align: center
+}
+
 .text {
     font-size: 1rem;
     line-height: 150%;
@@ -2371,6 +2367,9 @@ input:focus::placeholder,textarea:focus::placeholder {
 .popup {
     position: fixed;
     left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -2403,6 +2402,9 @@ input:focus::placeholder,textarea:focus::placeholder {
 .popup-bg {
     position: absolute;
     left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background: #000;
     opacity: .7
 }
@@ -2459,6 +2461,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -.01em;
+    text-align: center;
     font-size: 1.5rem
 }
 
@@ -2525,8 +2528,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .feedback-popup__image,.hero__bg {
     -webkit-user-select: none;
-    -ms-user-select: none;
-    pointer-events: none
+    -ms-user-select: none
 }
 
 .feedback-popup__body._sended .feedback-popup__body--wrapper {
@@ -2541,7 +2543,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     display: none;
     color: #fff;
     padding: 65px 20px 85px;
-    font-size: 1.125rem
+    font-size: 1.125rem;
+    text-align: center
 }
 
 .feedback-popup__close-btn {
@@ -2596,8 +2599,20 @@ input:focus::placeholder,textarea:focus::placeholder {
     z-index: 2
 }
 
+.feedback-popup__error {
+    width: 230px;
+    text-align: center;
+    color: #dd4b4b;
+    margin-top: 20px
+}
+
+.feedback-popup__error:not(._active) {
+    display: none
+}
+
 .feedback-popup__image {
     margin-top: -10%;
+    pointer-events: none;
     user-select: none
 }
 
@@ -2650,7 +2665,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     overflow-y: auto;
     overflow-x: hidden;
     opacity: 0;
-    visibility: hidden;
     transition: opacity .3s ease,visibility .3s ease
 }
 
@@ -2691,7 +2705,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header__nav--list li {
-    width: 100%
+    width: 100%;
+    text-align: center
 }
 
 .header__nav--list li a {
@@ -2827,7 +2842,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     z-index: -1;
     height: 100%;
     background: linear-gradient(269.37deg,rgba(233,251,250,0) 49.97%,#69DBC8 135.98%),linear-gradient(69.37deg,rgba(233,251,250,0) 49.97%,#69DBC8 135.98%) #e9fbfa;
-    user-select: none
+    user-select: none;
+    pointer-events: none
 }
 
 .hero__bg--element {
@@ -2856,6 +2872,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 .hero__bg--element:nth-child(2) img {
     width: 400px;
     height: auto
+}
+
+.hero__content {
+    text-align: center
 }
 
 .hero__title {
@@ -2898,6 +2918,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     -ms-user-select: none;
     user-select: none;
     color: #3848d0;
+    text-align: center;
+    font-family: Caveat;
     font-size: 1.625rem;
     font-weight: 400;
     line-height: 90%

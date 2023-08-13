@@ -258,6 +258,11 @@ function Popup(arg) {
 					popupCheckClose = true;
 					if(document.querySelector('._sended')) document.querySelector('._sended').classList.remove('_sended');
 					if(document.querySelector('._sending')) document.querySelector('._sending').classList.remove('_sending');
+					if(document.querySelector('.feedback-popup__error._active')) {
+						const error = document.querySelector('.feedback-popup__error._active');
+						error.classList.remove('_active');
+						error.setAttribute('aria-hidden', 'true');
+					}
 
 					const inputs = popup.querySelectorAll('input');
 					inputs.forEach(input => {
@@ -342,8 +347,12 @@ const popup = new Popup();
 popup.init();
 
 const feedbackPopupBody = document.querySelector('.feedback-popup__body');
+
 feedbackPopupBody.addEventListener('submit', function (event) {
 	event.preventDefault()
+
+	const feedbackPopupBody = document.querySelector('.feedback-popup__body'),
+	error = feedbackPopupBody.querySelector('.feedback-popup__error');
 
 	feedbackPopupBody.classList.add('_sending');
 	const wrapper = feedbackPopupBody.querySelector('.feedback-popup__body--wrapper');
@@ -376,7 +385,12 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 			feedbackPopupBody.classList.add('_sended');
 		},500)
 	})
-	.catch(() => console.log('ошибка'));
+	.catch(() => {
+		feedbackPopupBody.classList.remove('_sending');
+
+		error.classList.add('_active');
+		error.removeAttribute('aria-hidden');
+	});
 
 })
 

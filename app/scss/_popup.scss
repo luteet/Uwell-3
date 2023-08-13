@@ -291,6 +291,17 @@
 		
 	}
 
+	&__error {
+		width: 230px;
+		text-align: center;
+		color: #dd4b4b;
+		margin-top: 20px;
+
+		&:not(._active) {
+			display: none;
+		}
+	}
+
 	// .feedback-popup__image
 
 	&__image {
