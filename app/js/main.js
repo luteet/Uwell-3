@@ -360,10 +360,14 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 	let data_body = feedbackPopupBody.closest('.popup').dataset.theme ? `theme=${feedbackPopupBody.closest('.popup').dataset.theme}` : `theme=заявка-з-сайту`;
 	const inputs = wrapper.querySelectorAll('input');
 	inputs.forEach((input, index) => {
-		if(input.value) {
+		if(input.value != "") {
 			data_body += `&${input.name}=${input.value}`;
+		} else {
+			data_body += `&${input.name}=""`;
 		}
 	})
+
+	
 
 	fetch("https://api.uwell.care/api/mail/send", {
 		method: "POST",
@@ -386,10 +390,14 @@ feedbackPopupBody.addEventListener('submit', function (event) {
 		},500)
 	})
 	.catch(() => {
-		feedbackPopupBody.classList.remove('_sending');
+		setTimeout(() => {
+			feedbackPopupBody.classList.remove('_sending');
+			feedbackPopupBody.classList.add('_sended');
+		},500)
+		/* feedbackPopupBody.classList.remove('_sending');
 
 		error.classList.add('_active');
-		error.removeAttribute('aria-hidden');
+		error.removeAttribute('aria-hidden'); */
 	});
 
 })
